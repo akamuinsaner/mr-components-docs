@@ -9,16 +9,31 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/standalone": "^7.23.7",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.2",
+    "@mui/material": "^5.15.2",
+    "@types/uuid": "^9.0.7",
+    "@uiw/codemirror-themes-all": "^4.21.21",
+    "@uiw/react-codemirror": "^4.21.21",
+    "@uiw/react-textarea-code-editor": "^3.0.2",
+    "mr-components": "../mr-components/lib",
+    "next": "14.0.4",
+    "prismjs": "^1.29.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.4"
+    "react-simple-code-editor": "^0.13.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/babel__standalone": "^7.1.7",
     "@types/node": "^20",
+    "@types/prismjs": "^1.26.3",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint-config-next": "14.0.4",
+    "typescript": "^5"
   }
 }

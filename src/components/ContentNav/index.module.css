@@ -1,0 +1,12 @@
+.contentNav {
+    top: 0;
+    right: 0;
+    position: fixed;
+    margin-top: 0;
+    padding-left: 2px;
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 80px;
+    padding-bottom: 56px;
+    padding-right: 32px;
+}
