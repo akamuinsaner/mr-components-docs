@@ -1,4 +1,5 @@
 import Paper from '@mui/material/Paper';
+import Navs from './navs';
 
 export default ({
     children
@@ -6,8 +7,8 @@ export default ({
     children: React.ReactNode
 }) => {
     return (
-        <Paper sx={{ padding: '40px' }}>
-            
+        <Paper sx={{ padding: '100px 0' }}>
+            <Navs />
             {children}
         </Paper>
     ) 

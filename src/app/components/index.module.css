@@ -1,0 +1,27 @@
+.navs {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding-top: 80px;
+    width: 300px;
+}
+
+.title {
+    padding: 10px 40px;
+}
+
+.navItem {
+    padding: 15px 40px;
+    width: 100%;
+}
+
+.navItem:hover {
+    color: #0B0D0E;
+    background-color: #F3F6F9;
+}
+
+.navItem.selected {
+    background-color: #F0F7FF;
+    color: #0072E5;
+}
