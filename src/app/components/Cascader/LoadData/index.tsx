@@ -1,6 +1,6 @@
 "use client"
-import { Cascader } from "mr-components";
-import { CascaderOption } from "mr-components/Cascader";
+import { Cascader } from "@akamuinsaner/mr-components";
+import { CascaderOption } from "@akamuinsaner/mr-components/Cascader";
 import { v4 as uuidV4 } from 'uuid';
 
 const treeData = [

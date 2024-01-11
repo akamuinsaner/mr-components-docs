@@ -1,5 +1,5 @@
 "use client"
-import { TreeSelect } from "mr-components";
+import { TreeSelect } from "@akamuinsaner/mr-components";
 
 const treeData = [
     {

@@ -1,6 +1,6 @@
 export const code = `
 import React from 'react';
-import { TreeSelect } from "mr-components";
+import { TreeSelect } from "@akamuinsaner/mr-components";
 import Checkbox from '@mui/material/Checkbox';
 import Stack from '@mui/material/Stack';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -43,6 +43,9 @@ const treeData = [
 ];
 
 export default () => {
+    const [count, setCount] = React.useState<number>(4);
+    const [isResponsive, setIsResponsive] = React.useState<boolean>(false);
+    const maxTagCount = isResponsive ? 'responsive' : count
     return (
         <>
             <Stack
@@ -60,19 +63,19 @@ export default () => {
                         checked={isResponsive}
                         onChange={(e) => setIsResponsive(e.target.checked)}
                     />}
-                    label="responsive" 
+                    label="responsive"
                 />
             </Stack>
             <TreeSelect
                 label="Max Tag Count"
                 options={treeData}
-                size="small"
                 fullWidth
                 multiple
                 maxTagCount={maxTagCount}
                 allowClear
             />
         </>
+
     )
 }
 `

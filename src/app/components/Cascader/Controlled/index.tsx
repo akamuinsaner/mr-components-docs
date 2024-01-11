@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { Cascader } from "mr-components"
+import { Cascader } from "@akamuinsaner/mr-components"
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 

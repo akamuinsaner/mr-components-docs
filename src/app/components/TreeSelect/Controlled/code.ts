@@ -1,6 +1,6 @@
 export const code = `
 import React from 'react';
-import { TreeSelect } from "mr-components"
+import { TreeSelect } from "@akamuinsaner/mr-components"
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 
@@ -55,14 +55,12 @@ export default () => {
             <TreeSelect
                 label="Controlled"
                 options={treeData}
-                size="small"
                 fullWidth
                 multiple={multiple}
                 value={value}
                 onChange={setValue}
             />
         </>
-
     )
 }
 `

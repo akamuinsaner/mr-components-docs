@@ -1,5 +1,6 @@
 export const code = `
-import { TreeSelect, TreeSelectOption } from "mr-components";
+import { TreeSelect } from "@akamuinsaner/mr-components";
+import { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
 import { v4 as uuidV4 } from 'uuid';
 
 const treeData = [
@@ -34,7 +35,6 @@ export default () => {
         <TreeSelect
             label="Load data"
             options={treeData}
-            size="small"
             fullWidth
             loadData={loadData}
         />

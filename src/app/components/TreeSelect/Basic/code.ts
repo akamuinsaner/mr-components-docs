@@ -1,7 +1,7 @@
 export const simple = `<TreeSelect label="Basic" options={treeData} size="small" fullWidth />`;
 
 export const code = `
-import { TreeSelect } from "mr-components"
+import { TreeSelect } from "@akamuinsaner/mr-components";
 
 const treeData = [
     {
@@ -41,7 +41,6 @@ export default () => {
         <TreeSelect
             label="Basic"
             options={treeData}
-            size="small"
             fullWidth
         />
     )

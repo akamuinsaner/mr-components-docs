@@ -1,5 +1,5 @@
 "use client"
-import { Cascader } from "mr-components";
+import { Cascader } from "@akamuinsaner/mr-components";
 
 const treeData = [
     {

@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@akamuinsaner/mr-components": "0.1.0",
     "@babel/standalone": "^7.23.7",
+    "@codesandbox/sandpack-react": "^2.11.1",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.2",
@@ -18,7 +20,7 @@
     "@uiw/codemirror-themes-all": "^4.21.21",
     "@uiw/react-codemirror": "^4.21.21",
     "@uiw/react-textarea-code-editor": "^3.0.2",
-    "mr-components": "../mr-components/lib",
+    "esm": "^3.2.25",
     "next": "14.0.4",
     "prismjs": "^1.29.0",
     "react": "^18",
@@ -28,6 +30,7 @@
   },
   "devDependencies": {
     "@types/babel__standalone": "^7.1.7",
+    "@types/esm": "^3.2.2",
     "@types/node": "^20",
     "@types/prismjs": "^1.26.3",
     "@types/react": "^18",

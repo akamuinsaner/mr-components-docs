@@ -1,0 +1,4 @@
+{
+  "https://esm.sh/build": { "resolved": "https://esm.sh/v135/build", "integrity": "sha512-Wa0IQH3ymuBrIOKHpY1oczeDR2z55n1Ney+01SNjeOsBWTpflsn7ET7lP+kRkQCxdTKRX76ksXxbhtoPDCUEhQ==", "contentType": "application/javascript; charset=utf-8" },
+  "version": 1
+}

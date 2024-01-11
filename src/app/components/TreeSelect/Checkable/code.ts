@@ -1,5 +1,5 @@
 export const code = `
-import { TreeSelect } from "mr-components"
+import { TreeSelect } from "@akamuinsaner/mr-components";
 
 const treeData = [
     {
@@ -36,15 +36,16 @@ const treeData = [
 
 export default () => {
     return (
-        <TreeSelect
-            label="Basic"
-            options={treeData}
-            size="small"
-            fullWidth
-            multiple
-            checkable
-            allowClear
-        />
+        <>
+            <TreeSelect
+                label="Checkable"
+                options={treeData}
+                fullWidth
+                multiple
+                checkable
+                allowClear
+            />
+        </>
     )
 }
 `

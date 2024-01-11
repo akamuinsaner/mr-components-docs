@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Cascader, TreeSelect } from 'mr-components';
+import { Form, Cascader, TreeSelect } from '@akamuinsaner/mr-components';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';

@@ -4,15 +4,17 @@
     top: 0;
     height: 100%;
     padding-top: 80px;
-    width: 300px;
+    width: 200px;
+    font-size: 14px;
+    background-color: #fff;
 }
 
 .title {
-    padding: 10px 40px;
+    padding: 8px 30px;
 }
 
 .navItem {
-    padding: 15px 40px;
+    padding: 8px 30px;
     width: 100%;
 }
 

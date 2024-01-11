@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from 'mr-components';
+import { Form } from '@akamuinsaner/mr-components';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';

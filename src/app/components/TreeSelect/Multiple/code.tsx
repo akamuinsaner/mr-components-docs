@@ -1,5 +1,5 @@
 export const code = `
-import { TreeSelect } from "mr-components"
+import { TreeSelect } from "@akamuinsaner/mr-components"
 
 const treeData = [
     {
@@ -39,7 +39,6 @@ export default () => {
         <TreeSelect
             label="Multiple"
             options={treeData}
-            size="small"
             fullWidth
             multiple
             allowClear

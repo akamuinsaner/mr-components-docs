@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { Cascader } from "mr-components";
+import { Cascader } from "@akamuinsaner/mr-components";
 import Checkbox from '@mui/material/Checkbox';
 import Stack from '@mui/material/Stack';
 import FormControlLabel from '@mui/material/FormControlLabel';
