@@ -1,9 +1,9 @@
+"use client";
 import React from 'react';
 import Box from '@mui/material/Box';
 import styles from './index.module.css';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Link from 'next/link';
 import Typography from '@mui/material/Typography';
 
 export type NavItem = {
@@ -32,19 +32,19 @@ export default ({
                     const selected = hash === curHash;
                     return (
                         <ListItem
+                            component={'a'}
                             key={hash}
                             selected={selected}
+                            href={`#${nav.name}`}
                             onClick={() => setCurHash(hash)}
                             sx={{
+                                fontSize: '14px',
                                 '&:hover': {
                                     color: "#6B7A90",
                                     borderLeft: '1px solid #B0B8C4',
                                 }
                             }}
-                        >
-                            <Typography variant="body2">
-                                <Link href={`#${nav.name}`} >{nav.name}</Link>
-                            </Typography>
+                        >{nav.name}
                         </ListItem>
 
                     )

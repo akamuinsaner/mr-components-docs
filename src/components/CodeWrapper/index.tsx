@@ -12,6 +12,9 @@ import CodeOffIcon from '@mui/icons-material/CodeOff';
 import CodeEditor from './CodeEditor';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import ReactDom from 'react-dom';
+import * as Babel from '@babel/standalone';
+import * as mrComponents from "@akamuinsaner/mr-components";
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -33,13 +36,25 @@ export default ({
     code: string;
     codeSimple?: string;
 }) => {
+    const containerRef = React.useRef(null);
     const [codeString, setCodeString] = React.useState<string>(code);
     const [codeOpen, setCodeOpen] = React.useState<boolean>(true);
     const [errMsg, setErrMsg] = React.useState<string>('');
     const toggleCodeOpen = () => setCodeOpen(!codeOpen);
     const closeSnackBar = () => setErrMsg(null);
 
-
+    // React.useEffect(() => {
+    //     try {
+    //         const output = Babel.transform(codeString, { presets: ['react', 'es2015'] }).code;
+    //         const code = output.replace('"use strict";', "").trim();
+    //         console.log(code)
+    //         const func = new Function(`return ${code}`);
+    //         console.log(func());
+    //         // ReactDom.render(<Basic />, containerRef.current);
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // }, [codeString]);
     return (
         <Stack direction="column" spacing={2}>
             <Typography variant='h5' fontWeight="bold" id={name}>{name}</Typography>
@@ -55,11 +70,11 @@ export default ({
                     </IconButton>
                 </Stack>
                 <Divider />
-                <CodeEditor
+                {(codeOpen || codeSimple) ? <CodeEditor
                     value={codeOpen ? codeString : codeSimple}
                     disabled={true}
                     onChange={setCodeString}
-                />
+                /> : null}
                 <Divider />
             </Paper>
             <Snackbar

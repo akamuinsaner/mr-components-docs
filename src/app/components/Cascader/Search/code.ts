@@ -1,6 +1,6 @@
 export const code = `
 import React from 'react';
-import { TreeSelect } from "mr-components";
+import { Cascader } from "@akamuinsaner/mr-components"
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 
@@ -38,18 +38,29 @@ const treeData = [
 ];
 
 export default () => {
+    const [multiple, setMultiple] = React.useState<boolean>(false);
     return (
-        <TreeSelect
-            label="Basic"
-            options={treeData}
-            size="small"
-            fullWidth
-            search
-            multiple={multiple}
-            expandAll
-        />
+        <>
+            <ButtonGroup sx={{ marginBottom: '20px' }}>
+                <Button
+                    variant={multiple ? 'contained' : 'outlined'}
+                    onClick={() => setMultiple(true)}
+                >Multiple</Button>
+                <Button
+                    variant={!multiple ? 'contained' : 'outlined'}
+                    onClick={() => setMultiple(false)}
+                >Single</Button>
+            </ButtonGroup>
+            <Cascader
+                label="Search"
+                options={treeData}
+                fullWidth
+                search
+                multiple={multiple}
+            />
+        </>
     )
 }
 `
 
-export const simple = `<TreeSelect label="Search" options={treeData} size="small" fullWidth search expandAll />`
+export const simple = `<Cascader label="Search" options={treeData} fullWidth search multiple={multiple} />`

@@ -19,6 +19,7 @@ import { code as loadDataCode, simple as simpleLoadData } from './LoadData/code'
 import Search from './Search';
 import { code as searchCode, simple as simpleSearch } from './Search/code';
 import Size from './Size';
+import { code as sizeCode, simple as simpleSize } from './Size/code';
 import ContentNav from 'components/ContentNav';
 import CodeWrapper from 'components/CodeWrapper';
 import Link from '@mui/material/Link';
@@ -27,43 +28,43 @@ import ApiTable from './ApiTable';
 const NavList = [
     {
         name: 'Basic',
-        desc: 'the most basic usage of TreeSelect component',
+        desc: 'The most basic usage of TreeSelect component',
         element: <Basic />,
         code: basicCode,
         simpleCode: simpleBasicCode
     },
     {
         name: 'Size',
-        desc: 'two different sizes',
+        desc: 'Provide two different sizes, small and medium',
         element: <Size />,
-        code: '',
-        simpleCode: ''
+        code: sizeCode,
+        simpleCode: simpleSize
     },
     {
         name: 'ExpandAll',
         element: <ExpandAll />,
-        desc: 'default expand all tree leafs',
+        desc: 'Expand all tree leafs when open the component popper',
         code: expandCode,
         simpleCode: simpleExpandCode
     },
     {
         name: 'Multiple',
         element: <Multiple />,
-        desc: 'multiple select TreeSelect',
+        desc: 'Allow to select multiple values',
         code: multipleCode,
         simpleCode: simpleMultipleCode
     },
     {
         name: 'Placement',
         element: <Placement />,
-        desc: 'Change the placement of TreeSelect Dropdown',
+        desc: 'Change the placement of TreeSelect popper',
         code: placementCode,
         simpleCode: simplePlacement
     },
     {
         name: 'Controlled',
         element: <Controlled />,
-        desc: 'provide value and onChange make TreeSelect controllable',
+        desc: 'Provide value and onChange to make TreeSelect controllable',
         code: controlledCode,
         simpleCode: simpleControlled
     },
@@ -77,7 +78,7 @@ const NavList = [
     {
         name: 'Checkable',
         element: <Checkable />,
-        desc: 'realise multiple select function through Checkbox',
+        desc: 'Realise multiple select function through Checkbox',
         code: checkableCode,
         simpleCode: simpleCheckable
     },
@@ -91,7 +92,7 @@ const NavList = [
     {
         name: 'Search',
         element: <Search />,
-        desc: 'allow searching through user input',
+        desc: 'Allow searching through user input',
         code: searchCode,
         simpleCode: simpleSearch
     },

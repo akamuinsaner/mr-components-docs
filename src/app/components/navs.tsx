@@ -12,7 +12,9 @@ import { usePathname } from 'next/navigation';
 const components = [
     'Form',
     'Cascader',
-    "TreeSelect"
+    "TreeSelect",
+    "InputNumber",
+    "RecordTable",
 ]
 
 export default () => {

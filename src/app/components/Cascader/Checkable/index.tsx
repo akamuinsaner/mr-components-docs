@@ -38,15 +38,13 @@ const treeData = [
 
 export default () => {
     return (
-        <>
-            <Cascader
-                label="Checkable"
-                options={treeData}
-                fullWidth
-                multiple
-                checkable
-                allowClear
-            />
-        </>
+        <Cascader
+            label="Checkable"
+            options={treeData}
+            fullWidth
+            multiple
+            checkable
+            allowClear
+        />
     )
 }

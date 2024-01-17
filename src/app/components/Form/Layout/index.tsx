@@ -33,7 +33,7 @@ export default () => {
                     },
                     itemProps: {
                         item: true,
-                        xs: 4 
+                        xs: 4
                     }
                 }}
             >
@@ -60,6 +60,5 @@ export default () => {
                 </Form.Submit>
             </Form>
         </>
-
     )
 }

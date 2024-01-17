@@ -5,53 +5,59 @@ import CodeWrapper from 'components/CodeWrapper';
 import Link from '@mui/material/Link';
 import { NavItem } from 'components/ContentNav';
 import Basic from './Basic';
+import { code as basicCode } from './Basic/code';
 import Layout from './Layout';
+import { code as layoutCode } from './Layout/code';
 import Method from './Method';
+import { code as methodCode } from './Method/code';
 import Complex from './Complex';
+import { code as complexCode } from './Complex/code';
 import Size from './Size';
+import { code as sizeCode } from './Size/code';
 import Disabled from './Diasbled';
+import { code as diasbledCode } from './Diasbled/code';
 
 const NavList: NavItem[] = [
     {
         name: 'Basic',
         desc: 'Basic usage of Form component',
         element: <Basic />,
-        code: '',
+        code: basicCode,
         simpleCode: ''
     },
     {
         name: 'Layout',
-        desc: 'Offer two kinds of layout types',
+        desc: 'Offer two kinds of layout types, Stack and Grid',
         element: <Layout />,
-        code: '',
+        code: layoutCode,
         simpleCode: ''
     },
     {
         name: 'Method',
-        desc: 'Provide Form instance contain multiple useful methods',
+        desc: 'Provide Form instance contain many useful methods',
         element: <Method />,
-        code: '',
+        code: methodCode,
         simpleCode: ''
     },
     {
         name: 'Complex',
-        desc: 'Flexble way to manage complex form',
+        desc: 'Flexble way to manage complex form items',
         element: <Complex />,
-        code: '',
+        code: complexCode,
         simpleCode: ''
     },
     {
         name: 'Size',
         desc: 'Set the size of form components',
         element: <Size />,
-        code: '',
+        code: sizeCode,
         simpleCode: ''
     },
     {
         name: 'Disabled',
         desc: 'Set form disabled',
         element: <Disabled />,
-        code: '',
+        code: diasbledCode,
         simpleCode: ''
     },
 ]

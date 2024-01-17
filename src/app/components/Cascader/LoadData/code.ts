@@ -1,5 +1,6 @@
 export const code = `
-import { TreeSelect, TreeSelectOption } from "mr-components";
+import { Cascader } from "@akamuinsaner/mr-components";
+import { CascaderOption } from "@akamuinsaner/mr-components/Cascader";
 import { v4 as uuidV4 } from 'uuid';
 
 const treeData = [
@@ -20,8 +21,10 @@ const loadedData = () => [
     },
 ]
 
+
+
 export default () => {
-    const loadData = (o: TreeSelectOption) => {
+    const loadData = (o: CascaderOption) => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(true);
@@ -31,10 +34,9 @@ export default () => {
         })
     }
     return (
-        <TreeSelect
+        <Cascader
             label="Load data"
             options={treeData}
-            size="small"
             fullWidth
             loadData={loadData}
         />
@@ -42,4 +44,4 @@ export default () => {
 }
 `
 
-export const simple = `<TreeSelect label="Load data" options={treeData} size="small" fullWidth loadData={loadData} />`
+export const simple = `<Cascader label="Load data" options={treeData} fullWidth loadData={loadData} />`

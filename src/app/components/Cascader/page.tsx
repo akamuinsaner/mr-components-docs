@@ -5,70 +5,78 @@ import CodeWrapper from 'components/CodeWrapper';
 import Link from '@mui/material/Link';
 import { NavItem } from 'components/ContentNav';
 import Basic from './Basic';
+import { code as basicCode, simple as basicSimpleCode } from './Basic/code';
 import Size from './Size';
+import { code as sizeCode, simple as sizeSimpleCode } from './Size/code';
 import Multiple from './Multiple';
+import { code as multipleCode, simple as multipleSimpleCode } from './Multiple/code';
 import Controlled from './Controlled';
+import { code as controlledCode, simple as controlledSimpleCode } from './Controlled/code';
 import MaxTagCount from './MaxTagCount';
+import { code as maxTagCountCode, simple as maxTagCountSimpleCode } from './MaxTagCount/code';
 import Checkable from './Checkable';
+import { code as checkableCode, simple as checkableSimpleCode } from './Checkable/code';
 import LoadData from './LoadData';
+import { code as loadDataCode, simple as loadDataSimpleCode } from './LoadData/code';
 import Search from './Search';
+import { code as searchCode, simple as searchSimpleCode } from './Search/code';
 
 const NavList: NavItem[] = [
     {
         name: 'Basic',
         desc: 'Basic usage of Cascader Select',
         element: <Basic />,
-        code: '',
-        simpleCode: ''
+        code: basicCode,
+        simpleCode: basicSimpleCode
     },
     {
         name: 'Multiple',
         desc: 'Support select multiple options',
         element: <Multiple />,
-        code: '',
-        simpleCode: ''
+        code: multipleCode,
+        simpleCode: multipleSimpleCode
     },
     {
         name: 'Size',
         desc: 'Two different sizes',
         element: <Size />,
-        code: '',
-        simpleCode: ''
+        code: sizeCode,
+        simpleCode: sizeSimpleCode
     },
     {
         name: 'Controlled',
         element: <Controlled />,
-        desc: 'provide value and onChange make Cascader controllable',
-        code: '',
-        simpleCode: ''
+        desc: 'Provide value and onChange make Cascader controllable',
+        code: controlledCode,
+        simpleCode: controlledSimpleCode
     },
     {
         name: 'MaxTagCount',
         element: <MaxTagCount />,
         desc: 'Limit the count of tags while in multiple mode',
-        code: '',
-        simpleCode: ''
+        code: maxTagCountCode,
+        simpleCode: maxTagCountSimpleCode
     },
     {
         name: 'Checkable',
         element: <Checkable />,
-        desc: 'realise multiple select function through Checkbox',
-        code: '',
-        simpleCode: ''
+        desc: 'Realise multiple select function through Checkbox',
+        code: checkableCode,
+        simpleCode: checkableSimpleCode
     },
     {
         name: 'LoadData',
         element: <LoadData />,
         desc: 'Load data asynchnorously from remote',
-        code: "",
-        simpleCode: ""
+        code: loadDataCode,
+        simpleCode: loadDataSimpleCode
     },
     {
         name: 'Search',
         element: <Search />,
-        desc: 'allow searching through user input',
-        code: "",
-        simpleCode: ""
+        desc: 'Allow to search through user input',
+        code: searchCode,
+        simpleCode: searchSimpleCode
     },
 ]
 
