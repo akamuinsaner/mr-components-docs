@@ -16,6 +16,7 @@ import Size from './Size';
 import { code as sizeCode } from './Size/code';
 import Disabled from './Diasbled';
 import { code as diasbledCode } from './Diasbled/code';
+import ApiTable from './ApiTable';
 
 const NavList: NavItem[] = [
     {
@@ -64,7 +65,7 @@ const NavList: NavItem[] = [
 
 export default () => {
     return (
-        <Container sx={{ padding: '0 0 100px' }}>
+        <Container maxWidth="md">
             <Stack direction="column" spacing={2}>
                 <Typography variant='h3' fontWeight="bold">Form</Typography>
                 <Typography variant='body1'>
@@ -93,22 +94,7 @@ export default () => {
                     </CodeWrapper>
                 ))}
             </Stack>
-            <Stack
-                direction="column"
-                spacing={2}
-                sx={{ marginTop: '80px' }}
-            >
-                <Typography
-                    variant='h4'
-                    fontWeight="bold"
-                >API</Typography>
-                <Typography>
-                    See the documentation below for a complete reference
-                    to all of the props and classes available to the components
-                    mentioned here.
-                </Typography>
-                <Link href="https://mui.com/material-ui/react-text-field/">{`<TextField />`}</Link>
-            </Stack>
+            <ApiTable />
             <ContentNav
                 navs={NavList}
             />

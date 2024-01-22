@@ -13,8 +13,8 @@ const components = [
     'Form',
     'Cascader',
     "TreeSelect",
-    "InputNumber",
     "RecordTable",
+    "Tree",
 ]
 
 export default () => {

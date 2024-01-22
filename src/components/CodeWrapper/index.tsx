@@ -60,7 +60,7 @@ export default ({
             <Typography variant='h5' fontWeight="bold" id={name}>{name}</Typography>
             <Typography>{description}</Typography>
             <Paper elevation={3}>
-                <Box sx={{ padding: '50px 100px' }}>
+                <Box sx={{ padding: '40px 40px' }}>
                     {children}
                 </Box>
                 <Divider />

@@ -44,18 +44,6 @@ export default () => {
                         default: 'false'
                     },
                     {
-                        property: 'expandAll',
-                        description: 'default open all the tree leafs',
-                        datatype: 'boolean',
-                        default: 'false',
-                    },
-                    {
-                        property: 'expandKeys',
-                        description: 'default open specific tree leafs',
-                        datatype: 'Array<number | string>',
-                        default: '-',
-                    },
-                    {
                         property: 'loadData',
                         description: 'allow loading data asychorously from remote',
                         datatype: <span>(o: <Link href={`#treeData`}>option</Link>) =&gt; Promise&lt;<Link href={`#treeData`}>option</Link>[]&gt;</span>,
@@ -84,12 +72,6 @@ export default () => {
                         description: 'data of selected options',
                         datatype: <span><Link href={`#treeData`}>option</Link>[]</span>,
                         default: '-',
-                    },
-                    {
-                        property: 'placement',
-                        description: 'the placement of Popper box',
-                        datatype: 'PopperPlacementType',
-                        default: 'bottom-left',
                     },
                     {
                         property: 'popperClassName',
