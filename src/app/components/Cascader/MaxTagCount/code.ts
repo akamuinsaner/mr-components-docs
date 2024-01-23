@@ -1,6 +1,5 @@
 export const code = `
 import React from 'react';
-import { Cascader } from "@akamuinsaner/mr-components";
 import Checkbox from '@mui/material/Checkbox';
 import Stack from '@mui/material/Stack';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -8,8 +7,9 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import Cascader, { CascaderOption } from '@akamuinsaner/mr-components/Cascader';
 
-const treeData = [
+const treeData: CascaderOption[] = [
     {
         id: 'parent 1',
         name: 'parent 1',

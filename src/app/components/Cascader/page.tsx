@@ -2,7 +2,6 @@
 import { Typography, Stack, Container } from '@mui/material';
 import ContentNav from 'components/ContentNav';
 import CodeWrapper from 'components/CodeWrapper';
-import Link from '@mui/material/Link';
 import { NavItem } from 'components/ContentNav';
 import Basic from './Basic';
 import { code as basicCode, simple as basicSimpleCode } from './Basic/code';

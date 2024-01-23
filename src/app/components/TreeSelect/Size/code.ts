@@ -1,9 +1,8 @@
 export const code = `
 import React from 'react';
-import { TreeSelect } from '@akamuinsaner/mr-components';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { TextFieldProps } from '@mui/material';
+import TreeSelect, { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
 
 const treeData = [
     {
@@ -39,7 +38,7 @@ const treeData = [
 ];
 
 export default () => {
-    const [size, setSize] = React.useState<TextFieldProps["size"]>('medium')
+    const [size, setSize] = React.useState<'small' | 'medium'>('medium')
 
     return (
         <>

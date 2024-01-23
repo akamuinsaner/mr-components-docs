@@ -2,9 +2,9 @@ export const simple = `<Cascader label="Basic" options={treeData} fullWidth />`;
 
 export const code = `
 import React from 'react';
-import { Cascader } from '@akamuinsaner/mr-components';
+import Cascader, { CascaderOption } from '@akamuinsaner/mr-components/Cascader';
 
-const treeData = [
+const treeData: CascaderOption[] = [
     {
         id: 'parent 1',
         name: 'parent 1',

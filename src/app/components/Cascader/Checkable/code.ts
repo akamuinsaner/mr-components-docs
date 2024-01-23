@@ -1,9 +1,9 @@
 export const simple = `<Cascader label="Checkable" options={treeData} fullWidth multiple checkable allowClear />`;
 
 export const code = `
-import { Cascader } from "@akamuinsaner/mr-components";
+import Cascader, { CascaderOption } from '@akamuinsaner/mr-components/Cascader';
 
-const treeData = [
+const treeData: CascaderOption[] = [
     {
         id: 'parent 1',
         name: 'parent 1',
@@ -35,8 +35,6 @@ const treeData = [
         ],
     },
 ];
-
-
 
 export default () => {
     return (

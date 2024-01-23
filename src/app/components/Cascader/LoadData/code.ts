@@ -3,14 +3,14 @@ import { Cascader } from "@akamuinsaner/mr-components";
 import { CascaderOption } from "@akamuinsaner/mr-components/Cascader";
 import { v4 as uuidV4 } from 'uuid';
 
-const treeData = [
+const treeData: CascaderOption[] = [
     {
         id: uuidV4(),
         name: 'expand to load',
     },
 ];
 
-const loadedData = () => [
+const loadedData = (): CascaderOption[] => [
     {
         id: uuidV4(),
         name: 'expand to load',
@@ -21,10 +21,8 @@ const loadedData = () => [
     },
 ]
 
-
-
 export default () => {
-    const loadData = (o: CascaderOption) => {
+    const loadData = (o: CascaderOption): Promise<CascaderOption[]> => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(true);

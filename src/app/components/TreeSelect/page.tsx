@@ -1,6 +1,5 @@
 "use client"
 import { Typography, Stack, Container } from '@mui/material';
-import Basic from './Basic';
 import { code as basicCode, simple as simpleBasicCode } from './Basic/code';
 import ExpandAll from './ExpandAll';
 import { code as expandCode, simple as simpleExpandCode } from './ExpandAll/code';
@@ -22,14 +21,13 @@ import Size from './Size';
 import { code as sizeCode, simple as simpleSize } from './Size/code';
 import ContentNav from 'components/ContentNav';
 import CodeWrapper from 'components/CodeWrapper';
-import Link from '@mui/material/Link';
 import ApiTable from './ApiTable';
+import { NavItem } from 'components/ContentNav';
 
-const NavList = [
+const NavList: NavItem[] = [
     {
         name: 'Basic',
         desc: 'The most basic usage of TreeSelect component',
-        element: <Basic />,
         code: basicCode,
         simpleCode: simpleBasicCode
     },

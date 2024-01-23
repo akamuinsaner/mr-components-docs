@@ -1,16 +1,15 @@
 export const code = `
-import { TreeSelect } from "@akamuinsaner/mr-components";
-import { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
+import TreeSelect, { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
 import { v4 as uuidV4 } from 'uuid';
 
-const treeData = [
+const treeData: TreeSelectOption[] = [
     {
         id: uuidV4(),
         name: 'expand to load',
     },
 ];
 
-const loadedData = () => [
+const loadedData = (): TreeSelectOption[] => [
     {
         id: uuidV4(),
         name: 'expand to load',
@@ -22,7 +21,7 @@ const loadedData = () => [
 ]
 
 export default () => {
-    const loadData = (o: TreeSelectOption) => {
+    const loadData = (o: TreeSelectOption): Promise<TreeSelectOption[]> => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(true);

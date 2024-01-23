@@ -2,9 +2,7 @@ export const simple = ``;
 
 export const code = `
 import { RecordTable } from '@akamuinsaner/mr-components';
-import {
-    RecordTableColumn,
-} from '@akamuinsaner/mr-components/RecordTable';
+import { RecordTableColumn } from '@akamuinsaner/mr-components/RecordTable';
 import { Box } from '@mui/material';
 
 

@@ -1,11 +1,11 @@
 export const code = `
 import React from 'react';
-import { TreeSelect } from "@akamuinsaner/mr-components"
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import { PopperPlacementType } from '@mui/material/Popper';
+import TreeSelect, { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
 
-const treeData = [
+const treeData: TreeSelectOption[] = [
     {
         id: 'parent 1',
         name: 'parent 1',

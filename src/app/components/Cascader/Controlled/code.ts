@@ -2,11 +2,11 @@ export const simple = `<Cascader label="Controlled" options={treeData} fullWidth
 
 export const code = `
 import React from 'react';
-import { Cascader } from "@akamuinsaner/mr-components"
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
+import Cascader, { CascaderOption } from '@akamuinsaner/mr-components/Cascader';
 
-const treeData = [
+const treeData: CascaderOption[] = [
     {
         id: 'parent 1',
         name: 'parent 1',

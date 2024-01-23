@@ -1,7 +1,7 @@
 export const code = `
-import { TreeSelect } from "@akamuinsaner/mr-components";
+import TreeSelect, { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
 
-const treeData = [
+const treeData: TreeSelectOption[] = [
     {
         id: 'parent 1',
         name: 'parent 1',
@@ -35,7 +35,6 @@ const treeData = [
 ];
 
 export default () => {
-
     return (
         <TreeSelect
             label="Expand"
