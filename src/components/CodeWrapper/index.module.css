@@ -17,6 +17,18 @@
     align-items: center;
 }
 
+.editWrapper {
+    position: relative;
+}
+
+.copyBtn {
+    cursor: pointer;
+    position: absolute !important;
+    z-index: 1;
+    top: 6px;
+    right: 12px;
+}
+
 .codeEditor {
     margin: 0px;
     border: 0px;

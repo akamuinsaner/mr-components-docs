@@ -19,7 +19,8 @@ const components = [
 
 export default () => {
     const pathname= usePathname();
-    const [selected, setSelected] = React.useState<string>(pathname);
+    const curPathMatch = pathname.match(/\/components\/(.*)(\/)?(.*)?/);
+    const [selected, setSelected] = React.useState<string>(curPathMatch && curPathMatch[1]);
     return (
         <Box className={styles.navs}>
             <Typography
@@ -35,7 +36,7 @@ export default () => {
                             onClick={() => setSelected(c)}
                             className={`
                                 ${styles.navItem}
-                                ${selected.includes(c) ? styles.selected : ''}
+                                ${selected === c ? styles.selected : ''}
                             `}
                         >{c}</Link>
                     </ListItem>

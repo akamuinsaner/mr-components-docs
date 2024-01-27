@@ -1,4 +1,5 @@
 "use client"
+import React from 'react';
 import { Typography, Stack, Container } from '@mui/material';
 import ContentNav from 'components/ContentNav';
 import CodeWrapper from 'components/CodeWrapper';
@@ -81,40 +82,48 @@ const NavList: NavItem[] = [
 ]
 
 export default () => {
+    const [curNav, setCurNav] = React.useState('');
     return (
-        <Container maxWidth="md">
-            <Stack direction="column" spacing={2}>
-                <Typography variant='h3' fontWeight="bold">Cascader</Typography>
-                <Typography variant='body1'>
-                    Cascader Select
-                </Typography>
-                <Typography variant='h4' fontWeight="bold">When to use</Typography>
-                <Typography>
-                    Similar to Select, when the used data structure is tree like,
-                    you can use TreeSelect.
-                </Typography>
-            </Stack>
-            <Stack
-                direction="column"
-                spacing={8}
-                sx={{ marginTop: '80px' }}
-            >
-                {NavList.map(nav => (
-                    <CodeWrapper
-                        key={nav.name}
-                        name={nav.name}
-                        description={nav.desc}
-                        code={nav.code}
-                        codeSimple={nav.simpleCode}
-                    >
-                        {nav.element}
-                    </CodeWrapper>
-                ))}
-            </Stack>
-            <ApiTable />
+        <>
+            <Container maxWidth="md">
+                <Stack
+                    direction="column"
+                    spacing={2}
+                >
+                    <Typography variant='h3' fontWeight="bold">Cascader</Typography>
+                    <Typography variant='body1'>
+                        Cascader Select
+                    </Typography>
+                    <Typography variant='h4' fontWeight="bold">When to use</Typography>
+                    <Typography>
+                        Similar to Select, when the used data structure is tree like,
+                        you can use TreeSelect.
+                    </Typography>
+                </Stack>
+                <Stack
+                    direction="column"
+                    spacing={8}
+                    sx={{ marginTop: '80px' }}
+                >
+                    {NavList.map(nav => (
+                        <CodeWrapper
+                            key={nav.name}
+                            name={nav.name}
+                            description={nav.desc}
+                            code={nav.code}
+                            codeSimple={nav.simpleCode}
+                            setCurNav={setCurNav}
+                        >
+                            {nav.element}
+                        </CodeWrapper>
+                    ))}
+                </Stack>
+                <ApiTable />
+            </Container>
             <ContentNav
+                curNav={curNav}
                 navs={NavList}
             />
-        </Container>
+        </>
     )
 }

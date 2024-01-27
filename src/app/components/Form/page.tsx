@@ -1,4 +1,5 @@
 "use client"
+import React from 'react';
 import { Typography, Stack, Container } from '@mui/material';
 import ContentNav from 'components/ContentNav';
 import CodeWrapper from 'components/CodeWrapper';
@@ -64,40 +65,48 @@ const NavList: NavItem[] = [
 ]
 
 export default () => {
+    const [curNav, setCurNav] = React.useState('');
     return (
-        <Container maxWidth="md">
-            <Stack direction="column" spacing={2}>
-                <Typography variant='h3' fontWeight="bold">Form</Typography>
-                <Typography variant='body1'>
-                    Form component with state management, include data input, validation and layout
-                </Typography>
-                <Typography variant='h4' fontWeight="bold">When to use</Typography>
-                <Typography>
-                    1.Used to create an entity or collect information;<br />
-                    2.Need to validate the user input data.
-                </Typography>
-            </Stack>
-            <Stack
-                direction="column"
-                spacing={8}
-                sx={{ marginTop: '80px' }}
-            >
-                {NavList.map(nav => (
-                    <CodeWrapper
-                        key={nav.name}
-                        name={nav.name}
-                        description={nav.desc}
-                        code={nav.code}
-                        codeSimple={nav.simpleCode}
-                    >
-                        {nav.element}
-                    </CodeWrapper>
-                ))}
-            </Stack>
-            <ApiTable />
+        <>
+            <Container maxWidth="md">
+                <Stack
+                    direction="column"
+                    spacing={2}
+                >
+                    <Typography variant='h3' fontWeight="bold">Form</Typography>
+                    <Typography variant='body1'>
+                        Form component with state management, include data input, validation and layout
+                    </Typography>
+                    <Typography variant='h4' fontWeight="bold">When to use</Typography>
+                    <Typography>
+                        1.Used to create an entity or collect information;<br />
+                        2.Need to validate the user input data.
+                    </Typography>
+                </Stack>
+                <Stack
+                    direction="column"
+                    spacing={8}
+                    sx={{ marginTop: '80px' }}
+                >
+                    {NavList.map(nav => (
+                        <CodeWrapper
+                            key={nav.name}
+                            name={nav.name}
+                            description={nav.desc}
+                            code={nav.code}
+                            codeSimple={nav.simpleCode}
+                            setCurNav={setCurNav}
+                        >
+                            {nav.element}
+                        </CodeWrapper>
+                    ))}
+                </Stack>
+                <ApiTable />
+            </Container>
             <ContentNav
                 navs={NavList}
+                curNav={curNav}
             />
-        </Container>
+        </>
     )
 }

@@ -67,14 +67,17 @@ export default ({
     description,
     children,
     code,
-    codeSimple
+    codeSimple,
+    setCurNav
 }: {
     name: string;
     description?: React.ReactNode | string;
     children?: React.ReactNode,
     code: string;
     codeSimple?: string;
+    setCurNav?: (nav: string) => void;
 }) => {
+    const anchorRef = React.useRef(null);
     const codeTimer = React.useRef<NodeJS.Timeout>(null)
     const containerRef = React.useRef(null);
     const [codeString, setCodeString] = React.useState<string>(code);
@@ -82,6 +85,22 @@ export default ({
     const [errMsg, setErrMsg] = React.useState<string>('');
     const toggleCodeOpen = () => setCodeOpen(!codeOpen);
     const closeSnackBar = () => setErrMsg(null);
+
+    React.useEffect(() => {
+        let observer = new IntersectionObserver((entries, observer) => {
+            if (entries && entries.length && entries[0].isIntersecting) {
+                setCurNav(name);
+            }
+        }, {
+            root: document.querySelector("#scrollArea"),
+            rootMargin: "-100px",
+            threshold: 0,
+        });
+        observer.observe(anchorRef.current)
+        return () => {
+            anchorRef.current && observer.unobserve(anchorRef.current);
+        }
+    }, []);
 
     React.useEffect(() => {
         clearTimeout(codeTimer.current);
@@ -167,7 +186,12 @@ export default ({
     }, [codeString]);
     return (
         <Stack direction="column" spacing={2}>
-            <Typography variant='h5' fontWeight="bold" id={name}>{name}</Typography>
+            <Typography
+                variant='h5'
+                fontWeight="bold"
+                id={name}
+                ref={anchorRef}
+            >{name}</Typography>
             <Typography>{description}</Typography>
             <Paper elevation={3}>
                 <Box ref={containerRef} sx={{ padding: '40px 40px' }}>

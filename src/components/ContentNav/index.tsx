@@ -15,16 +15,29 @@ export type NavItem = {
 }
 
 export type Props = {
-    navs: NavItem[]
+    navs: NavItem[];
+    curNav?: string;
 }
 
 export default ({
-    navs
+    navs,
+    curNav
 }: Props) => {
     const [curHash, setCurHash] = React.useState(window.location.hash)
 
+    React.useEffect(() => {
+        setCurHash(`#${curNav}`);
+    }, [curNav]);
+
     return (
-        <Box className={styles.contentNav}>
+        <Box
+            className={styles.contentNav}
+            sx={(theme) => ({
+                [theme.breakpoints.down("md")]: {
+                    display: 'none'
+                }
+            })}
+        >
             <Typography variant="body2">CONTENTS</Typography>
             <List>
                 {navs.map(nav => {
