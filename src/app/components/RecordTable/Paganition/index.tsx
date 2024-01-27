@@ -107,7 +107,7 @@ export default function Pagination() {
                 columns={columns}
                 dataSource={dataSource}
                 rowKey="key"
-                pagination={controlled ? pagination : null}
+                pagination={(controlled ? pagination : null) as any}
             />
         </Stack>
     )

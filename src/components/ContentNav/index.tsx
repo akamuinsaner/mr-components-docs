@@ -23,7 +23,7 @@ export default function ContentNav ({
     navs,
     curNav
 }: Props) {
-    const [curHash, setCurHash] = React.useState(window.location.hash)
+    const [curHash, setCurHash] = React.useState('')
 
     React.useEffect(() => {
         setCurHash(`#${curNav}`);
