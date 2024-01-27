@@ -1,6 +1,6 @@
 import { InputNumber } from '@akamuinsaner/mr-components';
 
-export default () => {
+export default function Basic() {
 
     const onChange = (e: any) => {
         console.log(e.target.value)

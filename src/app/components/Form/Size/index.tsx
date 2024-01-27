@@ -44,7 +44,7 @@ const treeData = [
     },
 ];
 
-export default () => {
+export default function Size() {
     const [size, setSize] = React.useState<"small" | "medium">("medium");
     const onSubmit = (values: any) => console.log(values);
     return (

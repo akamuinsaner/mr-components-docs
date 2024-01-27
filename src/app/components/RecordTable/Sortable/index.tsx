@@ -54,7 +54,7 @@ const data: (key: any) => DataType = (key) => ({
 
 const datas = Array(50).fill({}).map((d, i) => data(i));
 
-export default () => {
+export default function Sortable() {
     const [dataSource, setDataSource] = React.useState<DataType[]>(datas);
     const [sortParams, setSortParams] = React.useState<RecordTableSortParams>({ order: 'asc', orderBy: '' });
     const [isControlled, setIsControlled] = React.useState<boolean>(false);

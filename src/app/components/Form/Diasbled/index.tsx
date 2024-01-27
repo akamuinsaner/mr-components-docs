@@ -44,7 +44,7 @@ const treeData = [
     },
 ];
 
-export default () => {
+export default function Disabled() {
     const [disabled, setDisabled] = React.useState<boolean>(true);
     const onSubmit = (values: any) => console.log(values);
     return (

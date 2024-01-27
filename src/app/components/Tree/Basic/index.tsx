@@ -35,7 +35,7 @@ const treeData: TreeData[] = [
     },
 ];
 
-export default () => {
+export default function Basic() {
     const onSelect = (selectedKeys: Array<number | string>, selected: boolean, node: TreeData) => {
         console.log(selectedKeys, selected, node)
     }

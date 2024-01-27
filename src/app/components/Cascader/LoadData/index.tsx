@@ -23,7 +23,7 @@ const loadedData = () => [
 
 
 
-export default () => {
+export default function LoadData() {
     const loadData = (o: CascaderOption) => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {

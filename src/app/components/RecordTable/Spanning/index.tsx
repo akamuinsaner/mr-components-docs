@@ -118,7 +118,7 @@ const data: DataType[] = [
     },
   ];
 
-export default () => {
+export default function Spanning() {
     return (
         <RecordTable
             columns={columns}

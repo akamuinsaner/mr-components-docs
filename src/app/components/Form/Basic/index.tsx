@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-export default () => {
+export default function Basic() {
     const initialValues = { firstName: 'Tony', lastName: 'Stark' }
     const onValueChange = (preValue: any, curValue: any) => {
         console.log(preValue, curValue)

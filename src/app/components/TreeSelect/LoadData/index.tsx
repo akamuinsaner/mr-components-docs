@@ -23,7 +23,7 @@ const loadedData = () => [
 
 
 
-export default () => {
+export default function LoadData() {
     const loadData = (o: TreeSelectOption) => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {

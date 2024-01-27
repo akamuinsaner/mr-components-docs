@@ -59,7 +59,7 @@ const treeData: TreeData[] = [
     },
 ];
 
-export default () => {
+export default function ShowLine() {
     const [showLine, setShowLine] = React.useState<boolean>(true);
     const [showIcon, setShowIcon] = React.useState<boolean>(false);
     const [showLeafIcon, setShowLeafIcon] = React.useState<React.ReactNode>(true);

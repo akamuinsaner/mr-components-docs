@@ -81,7 +81,7 @@ const NavList: NavItem[] = [
     },
 ]
 
-export default () => {
+export default function CascaderPage() {
     const [curNav, setCurNav] = React.useState('');
     return (
         <>

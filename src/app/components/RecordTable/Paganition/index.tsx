@@ -50,7 +50,7 @@ const data: (key: any) => DataType = (key) => ({
 
 const datas = Array(50).fill({}).map((d, i) => data(i));
 
-export default () => {
+export default function Pagination() {
     const [dataSource, setDataSource] = React.useState<DataType[]>(datas);
     const rowsPerPageOptions: number[] = [10, 15, 20];
     const [controlled, setControlled] = React.useState<boolean>(false);

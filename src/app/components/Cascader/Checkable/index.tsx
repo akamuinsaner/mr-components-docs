@@ -36,7 +36,7 @@ const treeData = [
 
 
 
-export default () => {
+export default function Checkable() {
     return (
         <Cascader
             label="Checkable"

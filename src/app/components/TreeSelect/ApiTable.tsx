@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Stack, Typography } from '@mui/material';
 import { RecordTable } from '@akamuinsaner/mr-components';
 
-export default () => {
+export default function ApiTable() {
     return (
         <Stack
             direction="column"

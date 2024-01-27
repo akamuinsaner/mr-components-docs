@@ -40,7 +40,7 @@ const treeData = [
 
 
 
-export default () => {
+export default function Placement() {
     const placements: PopperPlacementType[] = [
         'top-start',
         'top-end',

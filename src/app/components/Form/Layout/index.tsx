@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import TextField from '@mui/material/TextField';
 
-export default () => {
+export default function Layout() {
     const [layout, setLayout] = React.useState<"Stack" | "Grid">("Stack");
     const onSubmit = (values: any) => console.log(values);
     return (

@@ -79,7 +79,7 @@ const data: DataType[] = [
     },
 ];
 
-export default () => {
+export default function Expandable() {
     const [expandedRowKeys, setExpandedRowKeys] = React.useState<Array<number | string>>([]);
     const [isControlled, setIsControlled] = React.useState<boolean>(false);
     const [isCustomIcon, setIsCustomIcon] = React.useState<boolean>(false);

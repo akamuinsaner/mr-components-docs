@@ -40,7 +40,7 @@ const NavList = [
     },
 ]
 
-export default () => {
+export default function TreePage() {
     const [curNav, setCurNav] = React.useState('');
     return (
         <>

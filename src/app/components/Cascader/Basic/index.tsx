@@ -35,7 +35,7 @@ const treeData = [
     },
 ];
 
-export default () => {
+export default function Basic () {
     return (
         <Cascader
             label="Basic"

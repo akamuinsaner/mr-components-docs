@@ -35,7 +35,7 @@ const treeData: TreeData[] = [
     },
 ];
 
-export default () => {
+export default function Draggable() {
     const [data, setData] = React.useState<TreeData[]>(treeData);
 
     const loop = (data: TreeData[], active: any, over: any): TreeData[] => {

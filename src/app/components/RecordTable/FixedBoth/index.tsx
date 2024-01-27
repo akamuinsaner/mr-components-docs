@@ -103,7 +103,7 @@ const data: (key: any) => DataType = (key) => ({
 
 const dataSource = Array(50).fill({}).map((d, i) => data(i));
 
-export default () => {
+export default function FixedBoth() {
     return (
         <Box sx={{ height: '300px' }}>
             <RecordTable<DataType>

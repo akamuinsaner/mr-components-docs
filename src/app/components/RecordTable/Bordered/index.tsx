@@ -70,7 +70,7 @@ const data: DataType[] = [
     },
 ];
 
-export default () => {
+export default function Bordered() {
     return (
         <RecordTable<DataType>
             rowKey="key"

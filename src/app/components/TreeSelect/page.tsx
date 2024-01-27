@@ -97,7 +97,7 @@ const NavList: NavItem[] = [
     },
 ]
 
-export default () => {
+export default function TreeSelectPage() {
     const [curNav, setCurNav] = React.useState('');
     return (
         <>

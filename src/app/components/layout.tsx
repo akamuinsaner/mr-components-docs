@@ -10,11 +10,11 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
-export default ({
+export default function ComponentLayout({
     children
 }: {
     children: React.ReactNode
-}) => {
+}) {
     const [drawerOpen, setDrawerOpen] = React.useState<boolean>(false);
     return (
         <>

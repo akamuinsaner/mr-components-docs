@@ -64,7 +64,7 @@ const NavList: NavItem[] = [
     },
 ]
 
-export default () => {
+export default function FormPage() {
     const [curNav, setCurNav] = React.useState('');
     return (
         <>

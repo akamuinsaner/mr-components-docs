@@ -34,7 +34,7 @@ const treeData = [
     },
 ];
 
-export default () => {
+export default function ExpandAll() {
 
     return (
         <TreeSelect

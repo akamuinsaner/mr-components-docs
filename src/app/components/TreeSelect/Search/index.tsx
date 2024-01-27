@@ -37,7 +37,7 @@ const treeData = [
     },
 ];
 
-export default () => {
+export default function Search() {
     const [multiple, setMultiple] = React.useState<boolean>(false);
     return (
         <>

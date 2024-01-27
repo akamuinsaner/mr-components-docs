@@ -30,16 +30,18 @@
 }
 
 .navItem {
+    color: #0B0D0E !important;
     padding: 8px 30px;
     width: 100%;
+    text-decoration: none !important;
 }
 
 .navItem:hover {
-    color: #0B0D0E;
+    color: #0B0D0E !important;
     background-color: #F3F6F9;
 }
 
 .navItem.selected {
     background-color: #F0F7FF;
-    color: #0072E5;
+    color: #0072E5 !important;
 }

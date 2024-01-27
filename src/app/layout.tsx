@@ -20,7 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
          {children}
-         <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
         </body>
     </html>
   )

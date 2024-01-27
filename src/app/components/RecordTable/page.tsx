@@ -144,7 +144,7 @@ const NavList: NavItem[] = [
     }
 ]
 
-export default () => {
+export default function RecordTablePage() {
     const [curNav, setCurNav] = React.useState('');
     return (
         <>

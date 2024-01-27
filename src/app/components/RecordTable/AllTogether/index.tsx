@@ -10,7 +10,8 @@ import {
     FormControlLabel,
     Stack,
     Grid,
-    Checkbox
+    Checkbox,
+    CircularProgressProps
 } from '@mui/material';
 
 interface DataType {
@@ -124,7 +125,7 @@ const data: (key: any) => DataType = (key) => ({
 
 const dataSource = Array(50).fill({}).map((d, i) => data(i));
 
-export default () => {
+export default function AllTogether() {
     const [bordered, setBordered] = React.useState<boolean>(false);
     const toggleBordered = (e: React.ChangeEvent<HTMLInputElement>) => setBordered(e.target.checked);
     const [densed, setDensed] = React.useState<boolean>(false);
@@ -149,6 +150,8 @@ export default () => {
         fixed: columnFixed,
         type: 'checkbox'
     }
+
+    const loadingProps: CircularProgressProps = {};
 
     return (
         <Stack direction="column" spacing={2}>
@@ -211,7 +214,7 @@ export default () => {
                     x: columnFixed ?1850 : null,
                 }}
                 bordered={bordered}
-                loading={loading}
+                loading={loading && loadingProps}
                 size={densed ? 'small' : null}
                 expandable={expandable ? expandableProps : null}
                 rowSelection={selectable ? selectionProps : null}

@@ -48,7 +48,7 @@ const data: (key: any) => DataType = (key) => ({
 
 const dataSource = Array(50).fill({}).map((d, i) => data(i));
 
-export default () => {
+export default function Selectable() {
     const [selectedRowKeys, setSelectedRowKeys] = React.useState<Array<number | string>>([]);
     const [isControled, setIsControlled] = React.useState<boolean>(false);
     const [title, setTitle] = React.useState<string>('');

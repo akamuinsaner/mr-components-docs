@@ -15,7 +15,7 @@ const NavList: NavItem[] = [
     }
 ]
 
-export default () => {
+export default function InputNumberPage() {
     return (
         <Container sx={{ padding: '0 0 100px' }}>
             <Stack direction="column" spacing={2}>

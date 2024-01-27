@@ -99,7 +99,7 @@ const data: DataType[] = [
     },
 ];
 
-export default () => {
+export default function Droppable() {
     const dragStyles = { background: 'red' };
     const [dataSource, setDataSource] = React.useState<DataType[]>(data);
     const [lockAxis, setLockAxis] = React.useState<boolean>(false);

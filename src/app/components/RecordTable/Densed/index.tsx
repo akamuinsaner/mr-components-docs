@@ -70,7 +70,7 @@ const data: DataType[] = [
     },
 ];
 
-export default () => {
+export default function Densed() {
     return (
         <RecordTable<DataType>
             rowKey="key"

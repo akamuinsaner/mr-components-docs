@@ -10,7 +10,7 @@ import styles from './index.module.css';
 import { IconButton } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
-export default ({
+export default function CodeEditor ({
     value,
     disabled,
     onChange
@@ -18,7 +18,7 @@ export default ({
     value: string;
     disabled: boolean;
     onChange: (code: string) => void;
-}) => {
+}) {
     return (
         <Box className={styles.editWrapper}>
             <IconButton

@@ -34,7 +34,7 @@ const treeData = [
     },
 ];
 
-export default () => {
+export default function Basic() {
     return (
         <TreeSelect
             label="Basic"

@@ -3,7 +3,7 @@ import { Form } from '@akamuinsaner/mr-components';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
-export default () => {
+export default function Mathod() {
     const form = Form.useForm();
     const onSubmit = () => {
         form.validates((errors, values) => {

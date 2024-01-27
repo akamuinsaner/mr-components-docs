@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import styles from './index.module.css';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Link from 'next/Link';
+import Link from '@mui/material/Link';
 import { usePathname } from 'next/navigation';
 
 const components = [
@@ -17,7 +17,7 @@ const components = [
     "Tree",
 ]
 
-export default () => {
+export default function ComponentNavs() {
     const pathname= usePathname();
     const curPathMatch = pathname.match(/\/components\/(.*)(\/)?(.*)?/);
     const [selected, setSelected] = React.useState<string>(curPathMatch && curPathMatch[1]);

@@ -108,7 +108,7 @@ for (let i = 0; i < 100; i++) {
     });
 }
 
-export default () => {
+export default function GroupHeader() {
     return (
         <RecordTable
             rowSelection={{

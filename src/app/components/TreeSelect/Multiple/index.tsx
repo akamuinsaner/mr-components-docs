@@ -34,7 +34,7 @@ const treeData = [
     },
 ];
 
-export default () => {
+export default function Multiple() {
     return (
         <TreeSelect
             label="Multiple"

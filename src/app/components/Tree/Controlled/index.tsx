@@ -46,7 +46,7 @@ const treeData: TreeData[] = [
     },
 ];
 
-export default () => {
+export default function Controlled() {
     const [expandedKeys, setExpandedKeys] = React.useState<Array<string | number>>(['0-0', '0-1', '0-0-0', '0-0-1']);
     const [checkedKeys, setCheckedKeys] = React.useState<Array<string | number>>(['0-0-0']);
     const [selectedKeys, setSelectedKeys] = React.useState<Array<string | number>>([]);

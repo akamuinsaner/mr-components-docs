@@ -109,7 +109,7 @@ const data: DataType[] = [
     },
 ];
 
-export default () => {
+export default function Filter() {
     const modes = ['checkbox', 'input', 'autoComplete']
     const [dataSource, setDataSource] = React.useState<DataType[]>(data);
     const [controlled, setControlled] = React.useState<boolean>(false);

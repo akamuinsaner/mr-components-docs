@@ -19,10 +19,10 @@ export type Props = {
     curNav?: string;
 }
 
-export default ({
+export default function ContentNav ({
     navs,
     curNav
-}: Props) => {
+}: Props) {
     const [curHash, setCurHash] = React.useState(window.location.hash)
 
     React.useEffect(() => {

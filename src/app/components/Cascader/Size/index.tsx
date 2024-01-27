@@ -38,7 +38,7 @@ const treeData = [
     },
 ];
 
-export default () => {
+export default function Size() {
     const [size, setSize] = React.useState<TextFieldProps["size"]>('medium')
 
     return (

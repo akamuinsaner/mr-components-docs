@@ -42,7 +42,7 @@ const treeData = [
     },
 ];
 
-export default () => {
+export default function MaxTagCount() {
     const [count, setCount] = React.useState<number>(4);
     const [isResponsive, setIsResponsive] = React.useState<boolean>(false);
     const maxTagCount = isResponsive ? 'responsive' : count

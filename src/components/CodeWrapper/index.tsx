@@ -62,7 +62,7 @@ const transpileTSX = (input: string) => {
     }).code;
 }
 
-export default ({
+export default function CodeWrapper ({
     name,
     description,
     children,
@@ -76,7 +76,7 @@ export default ({
     code: string;
     codeSimple?: string;
     setCurNav?: (nav: string) => void;
-}) => {
+}) {
     const anchorRef = React.useRef(null);
     const codeTimer = React.useRef<NodeJS.Timeout>(null)
     const containerRef = React.useRef(null);

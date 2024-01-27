@@ -39,7 +39,7 @@ const treeData = [
 
 
 
-export default () => {
+export default function Controlled() {
     const [value, setValue] = React.useState<any>('');
     const [multiple, setMultiple] = React.useState<boolean>(false);
     return (
