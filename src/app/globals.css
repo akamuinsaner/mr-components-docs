@@ -106,3 +106,12 @@ a {
     color-scheme: dark;
   }
 }
+
+.footer {
+  font-size: 12px;
+  padding: 10px 0;
+  color: #fff;
+  background-color: #333;
+  position: relative;
+  z-index: 100;
+}
