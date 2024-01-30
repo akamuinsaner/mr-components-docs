@@ -46,21 +46,21 @@ const NavList: NavItem[] = [
     },
     {
         element: <Densed />,
-        name: 'Densed table',
+        name: 'Densed',
         desc: 'Provide two different sizes, small and medium',
         code: codeDensed,
         simpleCode: simpleDensed
     },
     {
         element: <Bordered />,
-        name: 'Bordered table',
+        name: 'Bordered',
         desc: 'Allow to add border to table',
         code: codeBordered,
         simpleCode: simpleBordered
     },
     {
         element: <Spanning />,
-        name: 'Spanning table',
+        name: 'Spanning',
         desc: 'Table head support merging column by colSpan in column configuration',
         code: codeSpanning,
         simpleCode: ''
@@ -81,14 +81,14 @@ const NavList: NavItem[] = [
     },
     {
         element: <FixedBoth />,
-        name: 'Fixed columns and headers',
+        name: 'Fixed Both',
         desc: 'Use css sticky feature to fixed both columns and headers',
         code: codeFixedBoth,
         simpleCode: simpleFixedBoth
     },
     {
         element: <GroupHeader />,
-        name: 'Header grouped table',
+        name: 'Header grouped',
         desc: 'Add children property to column configuration to group header cells',
         code: codeGroupHeader,
         simpleCode: simpleGroupHeader
@@ -102,28 +102,28 @@ const NavList: NavItem[] = [
     },
     {
         element: <Expandable />,
-        name: 'Expandable table',
+        name: 'Expandable',
         desc: 'Allow to expand table rows to show some extra information',
         code: codeExpandable,
         simpleCode: simpleExpandable
     },
     {
         element: <Sortable />,
-        name: 'Sortable table',
+        name: 'Sortable',
         desc: 'Allow to sort table data by providing some configs',
         code: codeSortable,
         simpleCode: simpleSortable
     },
     {
         element: <Filter />,
-        name: 'Filterable table',
+        name: 'Filterable',
         desc: 'Allow to filter table data by providing some configs',
         code: codeFilter,
         simpleCode: simpleFilter
     },
     {
         element: <Paganition />,
-        name: 'Paginated table',
+        name: 'Paginated',
         desc: 'Use pagination to controll table data display',
         code: codePaganition,
         simpleCode: simplePaganition
@@ -137,7 +137,7 @@ const NavList: NavItem[] = [
     },
     {
         element: <AllTogether />,
-        name: 'All features together',
+        name: 'All features',
         desc: 'Combine all features together',
         code: codeAllTogether,
         simpleCode: simpleAllTogether
