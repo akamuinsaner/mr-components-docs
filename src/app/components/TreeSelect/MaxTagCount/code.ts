@@ -1,5 +1,6 @@
 export const code = `
 import React from 'react';
+import { TreeSelect } from "@akamuinsaner/mr-components";
 import Checkbox from '@mui/material/Checkbox';
 import Stack from '@mui/material/Stack';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -7,9 +8,8 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import TreeSelect, { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
 
-const treeData: TreeSelectOption[] = [
+const treeData = [
     {
         id: 'parent 1',
         name: 'parent 1',
@@ -42,7 +42,7 @@ const treeData: TreeSelectOption[] = [
     },
 ];
 
-export default () => {
+export default function MaxTagCount() {
     const [count, setCount] = React.useState<number>(4);
     const [isResponsive, setIsResponsive] = React.useState<boolean>(false);
     const maxTagCount = isResponsive ? 'responsive' : count
@@ -75,9 +75,16 @@ export default () => {
                 allowClear
             />
         </>
-
     )
 }
 `
 
-export const simple = `<TreeSelect label="Max Tag Count" options={treeData} size="small" fullWidth multiple maxTagCount={maxTagCount} allowClear />`
+export const simple = `
+<TreeSelect
+    label="Max Tag Count"
+    options={treeData}
+    fullWidth
+    multiple
+    maxTagCount={maxTagCount}
+    allowClear
+/>`

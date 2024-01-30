@@ -1,8 +1,9 @@
 export const code = `
 import React from 'react';
+import { TreeSelect } from '@akamuinsaner/mr-components';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import TreeSelect, { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
+import { TextFieldProps } from '@mui/material';
 
 const treeData = [
     {
@@ -37,8 +38,8 @@ const treeData = [
     },
 ];
 
-export default () => {
-    const [size, setSize] = React.useState<'small' | 'medium'>('medium')
+export default function Size() {
+    const [size, setSize] = React.useState<TextFieldProps["size"]>('medium')
 
     return (
         <>
@@ -60,9 +61,15 @@ export default () => {
                 multiple
             />
         </>
-
     )
 }
 `
 
-export const simple = `<TreeSelect label="Size" options={treeData} fullWidth size={size} multiple />`
+export const simple = `
+<TreeSelect
+    label="Size"
+    options={treeData}
+    fullWidth
+    size={size}
+    multiple
+/>`

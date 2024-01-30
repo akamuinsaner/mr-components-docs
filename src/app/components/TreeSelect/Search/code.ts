@@ -37,7 +37,7 @@ const treeData: TreeSelectOption[] = [
     },
 ];
 
-export default () => {
+export default function Search () {
     const [multiple, setMultiple] = React.useState<boolean>(false);
     return (
         <>
@@ -57,11 +57,20 @@ export default () => {
                 fullWidth
                 search
                 multiple={multiple}
-                expandAll
+                defaultExpandAll
             />
         </>
     )
 }
 `
 
-export const simple = `<TreeSelect label="Search" options={treeData} size="small" fullWidth search expandAll />`
+export const simple = `
+<TreeSelect
+    label="Search"
+    options={treeData}
+    fullWidth
+    search
+    multiple={multiple}
+    defaultExpandAll
+/>
+`

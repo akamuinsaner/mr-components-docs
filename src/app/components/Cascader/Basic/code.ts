@@ -1,10 +1,17 @@
-export const simple = `<Cascader label="Basic" options={treeData} fullWidth />`;
+export const simple = `
+<Cascader
+    label="Basic"
+    options={treeData}
+    fullWidth
+    onChange={onChange}
+/>
+`;
 
 export const code = `
 import React from 'react';
-import Cascader, { CascaderOption } from '@akamuinsaner/mr-components/Cascader';
+import { Cascader } from '@akamuinsaner/mr-components';
 
-const treeData: CascaderOption[] = [
+const treeData = [
     {
         id: 'parent 1',
         name: 'parent 1',
@@ -37,12 +44,17 @@ const treeData: CascaderOption[] = [
     },
 ];
 
-export default () => {
+export default function Basic () {
+    const onChange = (value: any) => {
+        console.log(value)
+    }
+
     return (
         <Cascader
             label="Basic"
             options={treeData}
             fullWidth
+            onChange={onChange}
         />
     )
 }

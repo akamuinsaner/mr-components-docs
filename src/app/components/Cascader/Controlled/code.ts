@@ -1,12 +1,20 @@
-export const simple = `<Cascader label="Controlled" options={treeData} fullWidth multiple={multiple} value={value} onChange={setValue} />`;
+export const simple = `
+<Cascader
+    label="Controlled"
+    options={treeData}
+    fullWidth
+    multiple={multiple}
+    value={controlled ? value : null}
+    onChange={onChange}
+/>
+`;
 
 export const code = `
 import React from 'react';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Button from '@mui/material/Button';
-import Cascader, { CascaderOption } from '@akamuinsaner/mr-components/Cascader';
+import { Cascader } from "@akamuinsaner/mr-components"
+import { Button, ButtonGroup, Stack, FormControlLabel, Checkbox } from '@mui/material';
 
-const treeData: CascaderOption[] = [
+const treeData = [
     {
         id: 'parent 1',
         name: 'parent 1',
@@ -39,32 +47,45 @@ const treeData: CascaderOption[] = [
     },
 ];
 
-
-
-export default () => {
+export default function Controlled() {
     const [value, setValue] = React.useState<any>('');
     const [multiple, setMultiple] = React.useState<boolean>(false);
+    const [controlled, setControlled] = React.useState<boolean>(false);
+    const onChange = (value: any) => {
+        console.log(value);
+        if (controlled) setValue(value);
+    }
+    
     return (
-        <>
-            <ButtonGroup sx={{ marginBottom: '20px' }}>
-                <Button
-                    variant={multiple ? 'contained' : 'outlined'}
-                    onClick={() => setMultiple(true)}
-                >Multiple</Button>
-                <Button
-                    variant={!multiple ? 'contained' : 'outlined'}
-                    onClick={() => setMultiple(false)}
-                >Single</Button>
-            </ButtonGroup>
+        <Stack direction="column" spacing={2}>
+            <Stack direction="row" spacing={2}>
+                <ButtonGroup>
+                    <Button
+                        variant={multiple ? 'contained' : 'outlined'}
+                        onClick={() => setMultiple(true)}
+                    >Multiple</Button>
+                    <Button
+                        variant={!multiple ? 'contained' : 'outlined'}
+                        onClick={() => setMultiple(false)}
+                    >Single</Button>
+                </ButtonGroup>
+                <FormControlLabel
+                    label="controlled"
+                    control={<Checkbox
+                        checked={controlled}
+                        onChange={e => setControlled(e.target.checked)}
+                    />}
+                />
+            </Stack>
             <Cascader
                 label="Controlled"
                 options={treeData}
                 fullWidth
                 multiple={multiple}
-                value={value}
-                onChange={setValue}
+                value={controlled ? value : null}
+                onChange={onChange}
             />
-        </>
+        </Stack>
     )
 }
 `

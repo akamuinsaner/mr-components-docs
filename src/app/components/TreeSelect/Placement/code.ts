@@ -1,11 +1,11 @@
 export const code = `
 import React from 'react';
+import { TreeSelect } from "@akamuinsaner/mr-components"
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import { PopperPlacementType } from '@mui/material/Popper';
-import TreeSelect, { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
 
-const treeData: TreeSelectOption[] = [
+const treeData = [
     {
         id: 'parent 1',
         name: 'parent 1',
@@ -38,9 +38,7 @@ const treeData: TreeSelectOption[] = [
     },
 ];
 
-
-
-export default () => {
+export default function Placement() {
     const placements: PopperPlacementType[] = [
         'top-start',
         'top-end',
@@ -71,4 +69,11 @@ export default () => {
 }
 `
 
-export const simple = `<TreeSelect label="Placement" options={treeData} size="small" fullWidth placement={placement} />`
+export const simple = `
+<TreeSelect
+    label="Placement"
+    options={treeData}
+    size="small"
+    fullWidth
+    placement={placement}
+/>`

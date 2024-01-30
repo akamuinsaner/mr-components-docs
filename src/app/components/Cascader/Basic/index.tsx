@@ -36,11 +36,16 @@ const treeData = [
 ];
 
 export default function Basic () {
+    const onChange = (value: any) => {
+        console.log(value)
+    }
+
     return (
         <Cascader
             label="Basic"
             options={treeData}
             fullWidth
+            onChange={onChange}
         />
     )
 }

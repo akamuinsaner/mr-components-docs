@@ -1,8 +1,8 @@
 export const code = `
 import React from 'react';
-import Cascader, { CascaderOption } from '@akamuinsaner/mr-components/Cascader';
+import { Cascader } from '@akamuinsaner/mr-components';
 
-const treeData: CascaderOption[] = [
+const treeData = [
     {
         id: 'parent 1',
         name: 'parent 1',
@@ -35,7 +35,10 @@ const treeData: CascaderOption[] = [
     },
 ];
 
-export default () => {
+export default function Multiple() {
+    const onChange = (value: any) => {
+        console.log(value);
+    }
     return (
         <Cascader
             label="Multiple"
@@ -43,9 +46,19 @@ export default () => {
             fullWidth
             multiple
             allowClear
+            onChange={onChange}
         />
     )
 }
 `
 
-export const simple = `<Cascader label="Multiple" options={treeData} fullWidth multiple allowClear />`
+export const simple = `
+<Cascader
+    label="Multiple"
+    options={treeData}
+    fullWidth
+    multiple
+    allowClear
+    onChange={onChange}
+/>
+`

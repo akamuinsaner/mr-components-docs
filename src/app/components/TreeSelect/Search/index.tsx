@@ -57,7 +57,7 @@ export default function Search() {
                 fullWidth
                 search
                 multiple={multiple}
-                expandAll
+                defaultExpandAll
             />
         </>
     )

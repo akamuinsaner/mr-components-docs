@@ -1,5 +1,7 @@
 "use client"
+import React from 'react';
 import { TreeSelect } from "@akamuinsaner/mr-components";
+import { Stack, FormControlLabel, Checkbox } from '@mui/material';
 
 const treeData = [
     {
@@ -37,8 +39,29 @@ const treeData = [
 
 
 export default function Checkable() {
+    const [checkWithRelation, setCheckWithRelation] = React.useState<boolean>(false);
+
+    const onChange = (value: any) => {
+        console.log(value)
+    }
+
     return (
-        <>
+        <Stack
+            direction="column"
+            spacing={2}
+        >
+            <Stack
+                direction="row"
+                spacing={2}
+            >
+                <FormControlLabel
+                    label="checkWithRelation"
+                    control={<Checkbox
+                        checked={checkWithRelation}
+                        onChange={e => setCheckWithRelation(e.target.checked)}
+                    />}
+                />
+            </Stack>
             <TreeSelect
                 label="Checkable"
                 options={treeData}
@@ -46,7 +69,10 @@ export default function Checkable() {
                 multiple
                 checkable
                 allowClear
+                defaultExpandAll
+                checkWithRelation={checkWithRelation}
+                onChange={onChange}
             />
-        </>
+        </Stack>
     )
 }

@@ -29,13 +29,13 @@ import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Link from '@mui/material/Link';
 import { v4 as uuidV4 } from 'uuid';
-import ReactDom from 'react-dom';
+import ReactDom from 'react-dom/client';
 import * as Babel from '@babel/standalone';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormLabel from '@mui/material/FormLabel';
 import Switch from '@mui/material/Switch';
-import { Cascader, TreeSelect, Form, RecordTable } from '@akamuinsaner/mr-components';
+import { Cascader, TreeSelect, Form, RecordTable, Tree } from '@akamuinsaner/mr-components';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -68,7 +68,8 @@ export default function CodeWrapper ({
     children,
     code,
     codeSimple,
-    setCurNav
+    setCurNav,
+    useElement
 }: {
     name: string;
     description?: React.ReactNode | string;
@@ -76,6 +77,7 @@ export default function CodeWrapper ({
     code: string;
     codeSimple?: string;
     setCurNav?: (nav: string) => void;
+    useElement?: boolean;
 }) {
     const anchorRef = React.useRef(null);
     const codeTimer = React.useRef<NodeJS.Timeout>(null)
@@ -103,6 +105,7 @@ export default function CodeWrapper ({
     }, []);
 
     React.useEffect(() => {
+        if (useElement) return;
         clearTimeout(codeTimer.current);
         codeTimer.current = setTimeout(() => {
             try {
@@ -141,6 +144,7 @@ export default function CodeWrapper ({
                     'Box',
                     'Typography',
                     'Grid',
+                    'Tree',
                     `${output} return App`,
                 );
                 const App = func(
@@ -175,9 +179,11 @@ export default function CodeWrapper ({
                     Divider,
                     Box,
                     Typography,
-                    Grid
+                    Grid,
+                    Tree
                 );
-                ReactDom.render(<App />, containerRef.current);
+                const root = ReactDom.createRoot(containerRef.current);
+                root.render(<App />);
             } catch (e: any) {
                 setErrMsg(e.message);
             }

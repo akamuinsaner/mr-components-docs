@@ -1,7 +1,7 @@
 export const code = `
-import TreeSelect, { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
+import { TreeSelect } from "@akamuinsaner/mr-components"
 
-const treeData: TreeSelectOption[] = [
+const treeData = [
     {
         id: 'parent 1',
         name: 'parent 1',
@@ -34,7 +34,10 @@ const treeData: TreeSelectOption[] = [
     },
 ];
 
-export default () => {
+export default function Multiple() {
+    const onChange = (values: any) => {
+        console.log(values)
+    }
     return (
         <TreeSelect
             label="Multiple"
@@ -42,9 +45,18 @@ export default () => {
             fullWidth
             multiple
             allowClear
+            onChange={onChange}
         />
     )
 }
 `
 
-export const simple = `<TreeSelect label="Multiple" options={treeData} size="small" fullWidth, multiple allowClear />`
+export const simple = `
+<TreeSelect
+    label="Multiple"
+    options={treeData}
+    size="small"
+    fullWidth
+    multiple
+    allowClear
+/>`

@@ -38,8 +38,6 @@ const treeData = [
     },
 ];
 
-
-
 export default function Placement() {
     const placements: PopperPlacementType[] = [
         'top-start',

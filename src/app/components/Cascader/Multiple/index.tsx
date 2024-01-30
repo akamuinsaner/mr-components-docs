@@ -36,6 +36,9 @@ const treeData = [
 ];
 
 export default function Multiple() {
+    const onChange = (value: any) => {
+        console.log(value);
+    }
     return (
         <Cascader
             label="Multiple"
@@ -43,6 +46,7 @@ export default function Multiple() {
             fullWidth
             multiple
             allowClear
+            onChange={onChange}
         />
     )
 }

@@ -1,7 +1,8 @@
-"use client"
+export const code = `
 import React from 'react';
-import { Cascader } from "@akamuinsaner/mr-components";
-import { CascaderOption } from "@akamuinsaner/mr-components/Cascader";
+import { Tree } from '@akamuinsaner/mr-components';
+import { TreeData } from '@akamuinsaner/mr-components/Tree';
+
 import { v4 as uuidV4 } from 'uuid';
 
 const treeData = [
@@ -22,14 +23,16 @@ const loadRemoteData = () => [
     },
 ]
 
+
+
 export default function LoadData() {
-    const [data, setData] = React.useState<CascaderOption[]>(treeData);
+    const [data, setData] = React.useState<TreeData[]>(treeData);
 
     const formatRemoteData = (
-        id: CascaderOption["id"],
-        remoteData: CascaderOption[],
-        list: CascaderOption[]
-    ): CascaderOption[] => {
+        id: TreeData["id"],
+        remoteData: TreeData[],
+        list: TreeData[]
+    ): TreeData[] => {
         return list.map(item => {
             if (item.id === id) {
                 return { ...item, children: remoteData };
@@ -44,7 +47,7 @@ export default function LoadData() {
         })
     }
 
-    const loadData = (o: CascaderOption) => {
+    const loadData = (o: TreeData) => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(true);
@@ -57,11 +60,10 @@ export default function LoadData() {
     }
 
     return (
-        <Cascader
-            label="Load data"
-            options={data}
-            fullWidth
+        <Tree
+            treeData={data}
             loadData={loadData}
         />
     )
 }
+`

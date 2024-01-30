@@ -35,11 +35,16 @@ const treeData = [
 ];
 
 export default function Basic() {
+    const onChange = (value: any) => {
+        console.log(value)
+    }
+    
     return (
         <TreeSelect
             label="Basic"
             options={treeData}
             fullWidth
+            onChange={onChange}
         />
     )
 }

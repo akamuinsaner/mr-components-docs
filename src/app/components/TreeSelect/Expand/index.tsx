@@ -1,7 +1,7 @@
-export const code = `
+"use client"
 import React from 'react';
-import { TreeSelect } from "@akamuinsaner/mr-components"
-import { ButtonGroup, Button, Checkbox, FormControlLabel, Stack } from '@mui/material';
+import { TreeSelect } from "@akamuinsaner/mr-components";
+import { Stack, Checkbox, FormControlLabel } from "@mui/material";
 
 const treeData = [
     {
@@ -36,28 +36,23 @@ const treeData = [
     },
 ];
 
-export default function Controlled() {
-    const [value, setValue] = React.useState<any>('');
-    const [multiple, setMultiple] = React.useState<boolean>(false);
+export default function ExpandAll() {
+    const defaultExpandedKeys = ['parent 1', 'parent 1-0', 'parent 1-1'];
     const [controlled, setControlled] = React.useState<boolean>(false);
-    const onChange = (value: any) => {
-        console.log(value);
-        if (controlled) setValue(value);
+    const [expandedKeys, setExpandedKeys] = React.useState<Array<number | string>>([]);
+    const onExpand = (keys: Array<number | string>) => {
+        console.log(keys);
+        if (controlled) setExpandedKeys(keys);
     }
-    
     return (
-        <Stack direction="column" spacing={2}>
-            <Stack direction="row" spacing={2}>
-                <ButtonGroup>
-                    <Button
-                        variant={multiple ? 'contained' : 'outlined'}
-                        onClick={() => setMultiple(true)}
-                    >Multiple</Button>
-                    <Button
-                        variant={!multiple ? 'contained' : 'outlined'}
-                        onClick={() => setMultiple(false)}
-                    >Single</Button>
-                </ButtonGroup>
+        <Stack
+            direction="column"
+            spacing={2}
+        >
+            <Stack
+                direction="row"
+                spacing={2}
+            >
                 <FormControlLabel
                     label="controlled"
                     control={<Checkbox
@@ -67,23 +62,13 @@ export default function Controlled() {
                 />
             </Stack>
             <TreeSelect
-                label="Controlled"
+                label="Expand"
                 options={treeData}
                 fullWidth
-                multiple={multiple}
-                value={controlled ? value : null}
-                onChange={onChange}
+                defaultExpandedKeys={defaultExpandedKeys}
+                expandedKeys={controlled ? expandedKeys : null}
+                onExpand={onExpand}
             />
         </Stack>
     )
 }
-`
-
-export const simple = `
-<TreeSelect
-    label="Controlled"
-    options={treeData}
-    fullWidth
-    value={value}
-    onChange={onChange}
-/>`

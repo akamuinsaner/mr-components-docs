@@ -1,9 +1,16 @@
-export const simple = `<TreeSelect label="Basic" options={treeData} size="small" fullWidth />`;
+export const simple = `
+<TreeSelect
+    label="Basic"
+    options={treeData}
+    fullWidth
+    onChange={onChange}
+/>
+`;
 
 export const code = `
-import TreeSelect, { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
+import { TreeSelect } from "@akamuinsaner/mr-components";
 
-const treeData: TreeSelectOption[] = [
+const treeData = [
     {
         id: 'parent 1',
         name: 'parent 1',
@@ -36,12 +43,17 @@ const treeData: TreeSelectOption[] = [
     },
 ];
 
-export default () => {
+export default function Basic() {
+    const onChange = (value: any) => {
+        console.log(value)
+    }
+    
     return (
         <TreeSelect
             label="Basic"
             options={treeData}
             fullWidth
+            onChange={onChange}
         />
     )
 }

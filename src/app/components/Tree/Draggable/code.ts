@@ -1,3 +1,4 @@
+export const code = `
 import React from 'react';
 import { Tree } from '@akamuinsaner/mr-components';
 import { TreeData } from '@akamuinsaner/mr-components/Tree';
@@ -35,7 +36,7 @@ const treeData: TreeData[] = [
     },
 ];
 
-export default function Draggable() {
+export default () => {
     const [data, setData] = React.useState<TreeData[]>(treeData);
 
     const loop = (data: TreeData[], active: any, over: any): TreeData[] => {
@@ -79,3 +80,4 @@ export default function Draggable() {
         />
     )
 }
+`

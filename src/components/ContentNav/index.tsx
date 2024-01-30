@@ -12,6 +12,7 @@ export type NavItem = {
     code?: string;
     simpleCode?: string;
     element?: React.ReactNode;
+    useElement?: boolean;
 }
 
 export type Props = {

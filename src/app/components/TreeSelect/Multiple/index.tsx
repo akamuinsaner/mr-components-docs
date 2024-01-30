@@ -35,6 +35,9 @@ const treeData = [
 ];
 
 export default function Multiple() {
+    const onChange = (values: any) => {
+        console.log(values)
+    }
     return (
         <TreeSelect
             label="Multiple"
@@ -42,6 +45,7 @@ export default function Multiple() {
             fullWidth
             multiple
             allowClear
+            onChange={onChange}
         />
     )
 }

@@ -1,10 +1,10 @@
 export const code = `
 import React from 'react';
+import { Cascader } from "@akamuinsaner/mr-components"
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
-import Cascader, { CascaderOption } from '@akamuinsaner/mr-components/Cascader';
 
-const treeData: CascaderOption[] = [
+const treeData = [
     {
         id: 'parent 1',
         name: 'parent 1',
@@ -37,7 +37,7 @@ const treeData: CascaderOption[] = [
     },
 ];
 
-export default () => {
+export default function Search() {
     const [multiple, setMultiple] = React.useState<boolean>(false);
     return (
         <>
@@ -63,4 +63,12 @@ export default () => {
 }
 `
 
-export const simple = `<Cascader label="Search" options={treeData} fullWidth search multiple={multiple} />`
+export const simple = `
+<Cascader
+    label="Search"
+    options={treeData}
+    fullWidth
+    search
+    multiple={multiple}
+/>
+`

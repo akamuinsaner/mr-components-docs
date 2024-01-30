@@ -2,8 +2,8 @@
 import React from 'react';
 import { Typography, Stack, Container } from '@mui/material';
 import { code as basicCode, simple as simpleBasicCode } from './Basic/code';
-import ExpandAll from './ExpandAll';
-import { code as expandCode, simple as simpleExpandCode } from './ExpandAll/code';
+import Expand from './Expand';
+import { code as expandCode, simple as simpleExpandCode } from './Expand/code';
 import Multiple from './Multiple';
 import { code as multipleCode, simple as simpleMultipleCode } from './Multiple/code';
 import MaxTagCount from './MaxTagCount';
@@ -40,11 +40,12 @@ const NavList: NavItem[] = [
         simpleCode: simpleSize
     },
     {
-        name: 'ExpandAll',
-        element: <ExpandAll />,
-        desc: 'Expand all tree leafs when open the component popper',
+        name: 'Expand',
+        element: <Expand />,
+        desc: 'Expand tree leafs',
         code: expandCode,
-        simpleCode: simpleExpandCode
+        simpleCode: simpleExpandCode,
+        useElement: true
     },
     {
         name: 'Multiple',
@@ -129,6 +130,7 @@ export default function TreeSelectPage() {
                             code={nav.code}
                             codeSimple={nav.simpleCode}
                             setCurNav={setCurNav}
+                            useElement={nav.useElement}
                         >
                             {nav.element}
                         </CodeWrapper>

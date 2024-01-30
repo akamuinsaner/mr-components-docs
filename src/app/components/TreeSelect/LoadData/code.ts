@@ -1,15 +1,17 @@
 export const code = `
-import TreeSelect, { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
+import React from 'react';
+import { TreeSelect } from "@akamuinsaner/mr-components";
+import { TreeSelectOption } from "@akamuinsaner/mr-components/TreeSelect";
 import { v4 as uuidV4 } from 'uuid';
 
-const treeData: TreeSelectOption[] = [
+const treeData = [
     {
         id: uuidV4(),
         name: 'expand to load',
     },
 ];
 
-const loadedData = (): TreeSelectOption[] => [
+const loadRemoteData = () => [
     {
         id: uuidV4(),
         name: 'expand to load',
@@ -20,20 +22,44 @@ const loadedData = (): TreeSelectOption[] => [
     },
 ]
 
-export default () => {
-    const loadData = (o: TreeSelectOption): Promise<TreeSelectOption[]> => {
+export default function LoadData () {
+    const [data, setData] = React.useState<TreeSelectOption[]>(treeData);
+
+    const formatRemoteData = (
+        id: TreeSelectOption["id"],
+        remoteData: TreeSelectOption[],
+        list: TreeSelectOption[]
+    ): TreeSelectOption[] => {
+        return list.map(item => {
+            if (item.id === id) {
+                return { ...item, children: remoteData };
+            }
+            if (item.children && item.children.length) {
+                return {
+                    ...item,
+                    children: formatRemoteData(id, remoteData, item.children)
+                }
+            }
+            return item;
+        })
+    }
+
+    const loadData = (o: TreeSelectOption) => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(true);
             }, 2000);
         }).then(() => {
-            return loadedData();
+            const remoteData = loadRemoteData();
+            console.log('formatRemoteData', formatRemoteData(o.id, remoteData, data))
+            setData(formatRemoteData(o.id, remoteData, data));
         })
     }
+
     return (
         <TreeSelect
             label="Load data"
-            options={treeData}
+            options={data}
             fullWidth
             loadData={loadData}
         />
@@ -41,4 +67,10 @@ export default () => {
 }
 `
 
-export const simple = `<TreeSelect label="Load data" options={treeData} size="small" fullWidth loadData={loadData} />`
+export const simple = `
+<TreeSelect
+    label="Load data"
+    options={treeData}
+    fullWidth
+    loadData={loadData}
+/>`

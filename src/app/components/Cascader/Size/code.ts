@@ -1,10 +1,11 @@
 export const code = `
 import React from 'react';
+import { Cascader } from '@akamuinsaner/mr-components';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import Cascader, { CascaderOption } from '@akamuinsaner/mr-components/Cascader';
+import { TextFieldProps } from '@mui/material';
 
-const treeData: CascaderOption[] = [
+const treeData = [
     {
         id: 'parent 1',
         name: 'parent 1',
@@ -37,8 +38,8 @@ const treeData: CascaderOption[] = [
     },
 ];
 
-export default () => {
-    const [size, setSize] = React.useState<'small' | 'medium'>('medium')
+export default function Size() {
+    const [size, setSize] = React.useState<TextFieldProps["size"]>('medium')
 
     return (
         <>
@@ -64,4 +65,12 @@ export default () => {
 }
 `
 
-export const simple = `<Cascader label="Size" options={treeData} fullWidth size={size} multiple />`
+export const simple = `
+<Cascader
+    label="Size"
+    options={treeData}
+    fullWidth
+    size={size}
+    multiple
+/>
+`
