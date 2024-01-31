@@ -44,9 +44,15 @@ export default function ApiTable() {
                         default: 'false'
                     },
                     {
+                        property: 'checkWithRelation',
+                        description: 'when click a checkbox, also checked its children and parents',
+                        datatype: 'boolean',
+                        default: '-'
+                    },
+                    {
                         property: 'loadData',
                         description: 'allow loading data asychorously from remote',
-                        datatype: <span>(o: <Link href={`#treeData`}>option</Link>) =&gt; Promise&lt;<Link href={`#treeData`}>option</Link>[]&gt;</span>,
+                        datatype: <span>(o: <Link href={`#treeData`}>option</Link>) =&gt; any</span>,
                         default: '-',
                     },
                     {

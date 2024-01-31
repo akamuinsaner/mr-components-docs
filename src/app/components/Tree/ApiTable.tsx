@@ -27,26 +27,50 @@ export default function ApiTable() {
                 columns={[
                     { key: 'property', title: 'Property', onCell: () => ({ sx: { whiteSpace: 'nowrap' } }) },
                     { key: 'description', title: 'Description' },
-                    { key: 'datatype', title: 'Datatype', onCell: () => ({ sx: { color: '#c41d7f', whiteSpace: 'nowrap' } }) },
+                    { key: 'datatype', title: 'Datatype', onCell: () => ({ sx: { color: '#c41d7f' } }) },
                     { key: 'default', title: 'Default', onCell: () => ({ sx: { whiteSpace: 'nowrap' } }) },
                 ]}
                 dataSource={[
                     {
-                        property: 'allowClear',
-                        description: 'show clear icon when options selected and hovering at the same time',
+                        property: 'blockNodes',
+                        description: 'Tree nodes show in block style',
                         datatype: 'boolean',
                         default: 'false'
                     },
                     {
                         property: 'checkable',
-                        description: 'realise multiple select function through Checkbox',
+                        description: 'visibility of checkbox',
                         datatype: 'boolean',
                         default: 'false'
+                    },
+                    {
+                        property: 'checkedKeys',
+                        description: 'checked tree nodes used in control mode',
+                        datatype: 'Array<number | string>',
+                        default: '-'
                     },
                     {
                         property: 'checkWithRelation',
                         description: 'when click a checkbox, also checked its children and parents',
                         datatype: 'boolean',
+                        default: '-'
+                    },
+                    {
+                        property: 'className',
+                        description: 'classNames to control the style of container',
+                        datatype: 'string',
+                        default: '-'
+                    },
+                    {
+                        property: 'defaultCheckedAll',
+                        description: 'default checked all tree nodes',
+                        datatype: 'boolean',
+                        default: '-'
+                    },
+                    {
+                        property: 'defaultCheckedKeys',
+                        description: 'default checked tree nodes',
+                        datatype: 'Array<number | string>',
                         default: '-'
                     },
                     {
@@ -62,6 +86,24 @@ export default function ApiTable() {
                         default: '-',
                     },
                     {
+                        property: 'defaultSelectAll',
+                        description: 'default select all tree nodes',
+                        datatype: 'boolean',
+                        default: '-',
+                    },
+                    {
+                        property: 'defaultSelectedKeys',
+                        description: 'default selected tree nodes',
+                        datatype: 'Array<number | string>',
+                        default: '-',
+                    },
+                    {
+                        property: 'draggable',
+                        description: 'tell whether tree nodes are draggable',
+                        datatype: 'boolean',
+                        default: 'false',
+                    },
+                    {
                         property: 'expandedKeys',
                         description: 'open specific tree leafs used in control mode',
                         datatype: 'Array<number | string>',
@@ -74,63 +116,51 @@ export default function ApiTable() {
                         default: '-',
                     },
                     {
-                        property: 'maxTagCount',
-                        description: 'limit the tags show when select multiple values,if responsive, the number of show tags changes with the changing of container width',
-                        datatype: `number | 'responsive'`,
+                        property: 'onCheck',
+                        description: 'fired when tree nodes are checked',
+                        datatype: `(checkedKeys: Array<number | string>, checked: boolean, node: TreeData) => void`,
                         default: '-',
                     },
                     {
-                        property: 'multiple',
-                        description: 'allow multiple select',
-                        datatype: `boolean`,
-                        default: 'false',
-                    },
-                    {
-                        property: 'onChange',
-                        description: 'callback fired when select data',
-                        datatype: <span>(value: any) =&gt; void</span>,
+                        property: 'onDrop',
+                        description: 'fired when tree nodes are dropped',
+                        datatype: `(active: TreeData, over: TreeData) => void`,
                         default: '-',
                     },
                     {
                         property: 'onExpand',
-                        description: 'fired when tree leaf open change',
-                        datatype: <span>(expandedKeys: Array&lt;number | string&gt;) =&gt; void</span>,
+                        description: 'fired when tree nodes open change',
+                        datatype: `(expandedKeys: Array<number | string>, expanded: boolean, node: TreeData) => void`,
                         default: '-',
                     },
                     {
-                        property: 'options',
-                        description: 'data of selected options',
-                        datatype: <span><Link href={`#treeData`}>option</Link>[]</span>,
+                        property: 'onSelect',
+                        description: 'fired when tree nodes selection change',
+                        datatype: `(selectedKeys: Array<number | string>, selected: boolean, node: TreeData) => void`,
                         default: '-',
                     },
                     {
-                        property: 'placement',
-                        description: 'the placement of Popper box',
-                        datatype: 'PopperPlacementType',
-                        default: 'bottom-left',
-                    },
-                    {
-                        property: 'popperClassName',
-                        description: 'custom classNames of Popper box',
-                        datatype: 'string',
+                        property: 'selectedKeys',
+                        description: 'selected keys when in control mode',
+                        datatype: `Array<number | string>`,
                         default: '-',
                     },
                     {
-                        property: 'popperStyle',
-                        description: 'custom styles of Popper box',
-                        datatype: 'React.CSSProperties',
-                        default: '-',
-                    },
-                    {
-                        property: 'search',
-                        description: 'allow filtering options through user input',
+                        property: 'showLine',
+                        description: 'show the lines between tree nodes in the same level',
                         datatype: 'boolean',
-                        default: 'false',
+                        default: '-',
                     },
                     {
-                        property: 'value',
-                        description: 'to use TreeSelect as controlled component',
-                        datatype: 'any',
+                        property: 'switchIcon',
+                        description: 'switch icon',
+                        datatype: 'React.ReactNode | ((node: TreeData, expand: boolean) => React.ReactNode)',
+                        default: '-',
+                    },
+                    {
+                        property: '*treeData',
+                        description: 'data showed as tree nodes',
+                        datatype: 'TreeData[]',
                         default: '-',
                     },
                 ]}

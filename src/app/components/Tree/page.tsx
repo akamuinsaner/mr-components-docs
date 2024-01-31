@@ -14,6 +14,7 @@ import { code as loadDataCode } from './loadData/code';
 import ContentNav from 'components/ContentNav';
 import CodeWrapper from 'components/CodeWrapper';
 import Link from '@mui/material/Link';
+import ApiTable from './ApiTable';
 
 const NavList = [
     {
@@ -90,6 +91,7 @@ export default function TreePage() {
                         </CodeWrapper>
                     ))}
                 </Stack>
+                <ApiTable />
             </Container>
             <ContentNav
                 navs={NavList}
