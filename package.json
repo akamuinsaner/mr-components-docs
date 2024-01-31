@@ -19,6 +19,7 @@
     "@uiw/codemirror-themes-all": "^4.21.21",
     "@uiw/react-codemirror": "^4.21.21",
     "@uiw/react-textarea-code-editor": "^3.0.2",
+    "classnames": "^2.5.1",
     "esm": "^3.2.25",
     "next": "14.0.4",
     "prismjs": "^1.29.0",

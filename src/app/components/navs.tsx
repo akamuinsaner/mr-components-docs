@@ -6,8 +6,9 @@ import Divider from '@mui/material/Divider';
 import styles from './index.module.css';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Link from '@mui/material/Link';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import classNames from 'classnames';
 
 const components = [
     'Form',
@@ -34,10 +35,9 @@ export default function ComponentNavs() {
                         <Link
                             href={`/components/${c}`}
                             onClick={() => setSelected(c)}
-                            className={`
-                                ${styles.navItem}
-                                ${selected === c ? styles.selected : ''}
-                            `}
+                            className={classNames(styles.navItem, {
+                                [styles.selected]: selected === c
+                            })}
                         >{c}</Link>
                     </ListItem>
                 ))}
