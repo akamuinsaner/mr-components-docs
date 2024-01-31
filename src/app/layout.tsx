@@ -20,16 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-         {children}
-         <Stack
-            className='footer'
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-         >
-           <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备2024045238号-1</a>
-         </Stack>
-        </body>
+        {children}
+        <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备2024045238号-1</a>
+      </body>
     </html>
   )
 }
