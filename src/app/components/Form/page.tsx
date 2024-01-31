@@ -17,7 +17,7 @@ import Size from './Size';
 import { code as sizeCode } from './Size/code';
 import Disabled from './Diasbled';
 import { code as diasbledCode } from './Diasbled/code';
-import ApiTable from './ApiTable';
+// import ApiTable from './ApiTable';
 
 const NavList: NavItem[] = [
     {
@@ -101,7 +101,7 @@ export default function FormPage() {
                         </CodeWrapper>
                     ))}
                 </Stack>
-                <ApiTable />
+                {/* <ApiTable /> */}
             </Container>
             <ContentNav
                 navs={NavList}
