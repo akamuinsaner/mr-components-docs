@@ -28,7 +28,7 @@ pipeline {
                             docker rm -f ${CONTAINER_ID}
                         """
                     }
-                    sh "docker run -d -p 7000:3000 --name ${env.JOB_NAME}-${env.PROFILE} ${env.JOB_NAME}:${env.BUILD_ID}"
+                    sh "docker run -d -p 7000:3000 ${env.JOB_NAME}-${env.PROFILE} ${env.JOB_NAME}:${env.BUILD_ID}"
                 }
             }
         }
