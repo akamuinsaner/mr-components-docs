@@ -5,7 +5,7 @@ import Editor from 'react-simple-code-editor';
 import { highlight, languages } from 'prismjs/components/prism-core';
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
-import 'prismjs/themes/prism-solarizedlight.min.css'; //Example style, you can use another
+import 'prismjs/themes/prism.min.css'; //Example style, you can use another
 import styles from './index.module.css';
 import { IconButton } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
