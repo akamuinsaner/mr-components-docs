@@ -35,7 +35,9 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormLabel from '@mui/material/FormLabel';
 import Switch from '@mui/material/Switch';
-import { Cascader, TreeSelect, Form, RecordTable, Tree } from '@akamuinsaner/mr-components';
+import { Cascader, TreeSelect, Form, RecordTable, Tree, message } from '@akamuinsaner/mr-components';
+import { MessageProvider } from '@akamuinsaner/mr-components/Message';
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -145,6 +147,9 @@ export default function CodeWrapper ({
                     'Typography',
                     'Grid',
                     'Tree',
+                    'message',
+                    'MessageProvider',
+                    'AccessAlarmIcon',
                     `${output} return App`,
                 );
                 const App = func(
@@ -180,7 +185,10 @@ export default function CodeWrapper ({
                     Box,
                     Typography,
                     Grid,
-                    Tree
+                    Tree,
+                    message,
+                    MessageProvider,
+                    AccessAlarmIcon
                 );
                 const root = ReactDom.createRoot(containerRef.current);
                 root.render(<App />);

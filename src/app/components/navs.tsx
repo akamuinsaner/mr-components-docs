@@ -16,6 +16,7 @@ const components = [
     "TreeSelect",
     "RecordTable",
     "Tree",
+    "Message"
 ]
 
 export default function ComponentNavs() {
