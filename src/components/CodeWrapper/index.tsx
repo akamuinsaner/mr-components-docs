@@ -38,6 +38,9 @@ import Switch from '@mui/material/Switch';
 import { Cascader, TreeSelect, Form, RecordTable, Tree, message } from '@akamuinsaner/mr-components';
 import { MessageProvider } from '@akamuinsaner/mr-components/Message';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import SortIcon from '@mui/icons-material/Sort';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -150,6 +153,9 @@ export default function CodeWrapper ({
                     'message',
                     'MessageProvider',
                     'AccessAlarmIcon',
+                    'AddCircleOutlineIcon',
+                    'RemoveCircleOutlineIcon',
+                    'SortIcon',
                     `${output} return App`,
                 );
                 const App = func(
@@ -188,7 +194,10 @@ export default function CodeWrapper ({
                     Tree,
                     message,
                     MessageProvider,
-                    AccessAlarmIcon
+                    AccessAlarmIcon,
+                    AddCircleOutlineIcon,
+                    RemoveCircleOutlineIcon,
+                    SortIcon
                 );
                 const root = ReactDom.createRoot(containerRef.current);
                 root.render(<App />);
@@ -209,7 +218,7 @@ export default function CodeWrapper ({
             <Typography>{description}</Typography>
             <Paper elevation={3}>
                 <Box ref={containerRef} sx={{ padding: '40px 40px' }}>
-                    {children}
+                    
                 </Box>
                 <Divider />
                 <Stack className={styles.operations}>
