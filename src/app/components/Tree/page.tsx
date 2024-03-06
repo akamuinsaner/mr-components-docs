@@ -63,14 +63,13 @@ export default function TreePage() {
                     direction="column"
                     spacing={2}
                 >
-                    <Typography variant='h3' fontWeight="bold">TreeSelect</Typography>
+                    <Typography variant='h3' fontWeight="bold">Tree</Typography>
                     <Typography variant='body1'>
-                        Tree like Select
+                        Tree like Component
                     </Typography>
                     <Typography variant='h4' fontWeight="bold">When to use</Typography>
                     <Typography>
-                        Similar to Select, when the used data structure is tree like,
-                        you can use TreeSelect.
+                        when the used data structure is tree like
                     </Typography>
                 </Stack>
                 <Stack

@@ -45,7 +45,6 @@ const NavList: NavItem[] = [
         desc: 'Expand tree leafs',
         code: expandCode,
         simpleCode: simpleExpandCode,
-        useElement: true
     },
     {
         name: 'Multiple',
